@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "email": "admin@kdglobalfacilities.com",
+      "passwordHash": "91bf772ebffd5ad652e833fe8aaf17f8cc01d72fd8fbbf9ed912c467a501af21",
+      "name": "Operations Director",
+      "role": "SUPER_ADMIN",
+      "updatedAt": "2026-09-16T18:22:09.309Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "9283e2241e0cb64c6fb958db77d418ef9b550af8f985353c6356c421076169be",
+      "email": "admin@kdglobalfacilities.com",
+      "expiresAt": "2026-09-23T18:22:09.312Z",
+      "createdAt": "2026-09-16T18:22:09.312Z"
+    }
+  ]
+}
