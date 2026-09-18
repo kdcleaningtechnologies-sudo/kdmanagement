@@ -1,0 +1,46 @@
+<svg viewBox="0 0 256 256" width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040914" />
+      <stop offset="100%" stop-color="#081426" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF" />
+      <stop offset="100%" stop-color="#00D2B4" />
+    </linearGradient>
+    <linearGradient id="kdBlueTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF" />
+      <stop offset="40%" stop-color="#0099FF" />
+      <stop offset="70%" stop-color="#00C2FF" />
+      <stop offset="100%" stop-color="#00D2B4" />
+    </linearGradient>
+    <linearGradient id="kdSwoosh" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0052D4" />
+      <stop offset="40%" stop-color="#0099FF" />
+      <stop offset="80%" stop-color="#00D2B4" />
+      <stop offset="100%" stop-color="#00F2C8" />
+    </linearGradient>
+    <linearGradient id="kdSparkle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2B4" />
+      <stop offset="100%" stop-color="#00F2C8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Squircle with subtle border -->
+  <rect x="6" y="6" width="244" height="244" rx="54" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="8" />
+
+  <!-- KD Vector Monogram scaled & centered -->
+  <g transform="translate(41, 56) scale(1.18)">
+    <!-- Sparkle Star atop D -->
+    <path d="M 125 8 Q 125 18 135 18 Q 125 18 125 28 Q 125 18 115 18 Q 125 18 125 8 Z" fill="url(#kdSparkle)" />
+
+    <!-- Letter 'K' -->
+    <path d="M 12 28 H 32 V 62 L 60 28 H 84 L 46 72 L 86 118 H 61 L 32 82 V 118 H 12 Z" fill="url(#kdBlueTeal)" />
+
+    <!-- Letter 'D' -->
+    <path d="M 74 28 H 108 C 132 28 148 44 148 73 C 148 102 132 118 108 118 H 74 Z M 94 48 V 98 H 107 C 121 98 128 89 128 73 C 128 57 121 48 107 48 Z" fill="url(#kdBlueTeal)" />
+
+    <!-- Dynamic Curved Swoosh Arc -->
+    <path d="M 8 98 C 18 114 42 124 74 116 C 104 108 130 86 146 54 C 132 74 104 96 74 98 C 42 100 20 86 8 98 Z" fill="url(#kdSwoosh)" />
+  </g>
+</svg>
