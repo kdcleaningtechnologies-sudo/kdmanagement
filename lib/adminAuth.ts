@@ -6,11 +6,13 @@ import path from "path";
 const AUTH_FILE_PATH = path.join(process.cwd(), "data", "admin_auth.json");
 const ADMIN_SESSION_COOKIE = "kd_admin_session";
 
-// Default admin credentials
+// Default admin credentials (configurable via environment variables)
+const DEFAULT_ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@kdglobalfacilities.com";
+const DEFAULT_ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "kdadmin2026";
+
 const DEFAULT_ADMIN = {
-  email: "admin@kdglobalfacilities.com",
-  // SHA-256 hash for 'kdadmin2026'
-  passwordHash: crypto.createHash("sha256").update("kdadmin2026").digest("hex"),
+  email: DEFAULT_ADMIN_EMAIL,
+  passwordHash: crypto.createHash("sha256").update(DEFAULT_ADMIN_PASSWORD).digest("hex"),
   name: "Operations Director",
   role: "SUPER_ADMIN",
   updatedAt: new Date().toISOString(),

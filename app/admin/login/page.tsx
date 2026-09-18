@@ -4,7 +4,6 @@ import React, { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
-  ShieldCheck,
   Lock,
   Mail,
   ArrowRight,
@@ -19,8 +18,8 @@ function LoginForm() {
   const searchParams = useSearchParams();
   const nextUrl = searchParams.get("next") || "/admin/dashboard";
 
-  const [email, setEmail] = useState("admin@kdglobalfacilities.com");
-  const [password, setPassword] = useState("kdadmin2026");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -68,19 +67,6 @@ function LoginForm() {
         </p>
       </div>
 
-      {/* Default Credentials Helper Callout */}
-      <div className="mb-6 p-3.5 rounded-2xl bg-navy-950 border border-navy-800/80 text-xs text-slate-300 flex items-start gap-2.5">
-        <ShieldCheck className="w-4 h-4 text-brandgreen-400 flex-shrink-0 mt-0.5" />
-        <div>
-          <span className="font-bold text-white block">Default Admin Credentials</span>
-          <span className="text-slate-400 text-[11px]">
-            User: <code className="text-brandgreen-300">admin@kdglobalfacilities.com</code>
-            <br />
-            Pass: <code className="text-brandgreen-300">kdadmin2026</code>
-          </span>
-        </div>
-      </div>
-
       {/* Error Banner */}
       {error && (
         <div className="mb-6 p-3.5 rounded-2xl bg-rose-950/80 border border-rose-800/80 text-xs text-rose-200 flex items-center gap-2.5 animate-shake">
@@ -102,7 +88,7 @@ function LoginForm() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="admin@kdglobalfacilities.com"
+              placeholder="name@company.com"
               className="w-full bg-navy-950 border border-navy-800 rounded-xl py-3 pl-10 pr-4 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brandgreen-400 transition-colors"
             />
           </div>
