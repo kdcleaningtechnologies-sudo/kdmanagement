@@ -9,7 +9,7 @@ export interface WhyUsPoint {
 
 export const whyUsData = {
   sectionBadge: "The KD Standard",
-  headline: "Why Leading Enterprises Choose KD Global Facilities",
+  headline: "Why Leading Enterprises Choose KD Facilities Management Services",
   subheadline: "Most vendors sell unvetted headcount. We deliver guaranteed operational outcomes backed by digital accountability, strict statutory compliance, and trained personnel.",
   points: [
     {

@@ -17,11 +17,11 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Facility Management Insights & B2B Knowledge Hub | KD Global Facilities",
+  title: "Facility Management Insights & B2B Knowledge Hub | KD Facilities Management Services",
   description:
     "Expert articles on Integrated Facility Management (IFM), PASARA security compliance, corporate housekeeping SLAs, and MEP maintenance for commercial properties in Gurgaon and Delhi NCR.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/insights",
+    canonical: "https://www.kdfmservices.com/insights",
   },
   keywords: [
     "Facility Management Insights",
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     "Drone Facade Cleaning India",
   ],
   openGraph: {
-    title: "Facility Management Insights & Knowledge Hub | KD Global Facilities",
+    title: "Facility Management Insights & Knowledge Hub | KD Facilities Management Services",
     description:
       "Expert operational guides, SLA benchmarks, and compliance checklists for corporate facility directors and administration heads in Delhi NCR.",
-    url: "https://www.kdglobalfacilities.com/insights",
+    url: "https://www.kdfmservices.com/insights",
     type: "website",
     locale: "en_IN",
   },
@@ -127,7 +127,7 @@ export default function InsightsHubPage() {
                     <div className="relative aspect-[16/9] w-full overflow-hidden bg-navy-950">
                       <Image
                         src={article.featuredImage}
-                        alt={`${article.title} - KD Global Facilities guide`}
+                        alt={`${article.title} - KD Facilities Management Services guide`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"

@@ -4,7 +4,7 @@ export function middleware(req: NextRequest) {
   const url = req.nextUrl;
   const hostname = req.headers.get("host") || "";
 
-  // Detect admin subdomain: e.g. "admin.kdglobalfacilities.com", "admin.localhost:3000", "admin.domain.com"
+  // Detect admin subdomain: e.g. "admin.kdfmservices.com", "admin.localhost:3000", "admin.domain.com"
   const isAdminSubdomain =
     hostname.startsWith("admin.") ||
     hostname.includes("admin.localhost");

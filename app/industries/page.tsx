@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "Specialized facility management solutions for Corporate Offices, Hospitals, Hotels, Industrial Plants, Malls, Schools, Residential Societies, and Commercial Buildings across Gurugram, Manesar, Noida, and Delhi NCR.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/industries",
+    canonical: "https://www.kdfmservices.com/industries",
   },
   keywords: [
     "Corporate Cleaning Services Gurgaon",

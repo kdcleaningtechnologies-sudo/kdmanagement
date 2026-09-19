@@ -112,7 +112,7 @@ export const insightsArticles: InsightArticle[] = [
         sectionId: "implementation",
         heading: "6. How to Transition Your Facility in 30 Days",
         paragraphs: [
-          "A structured transition pipeline eliminates disruption for office occupants. KD Global Facilities employs a proven 5-step onboarding protocol: Phase 1 On-site engineering audit (Day 1-5), Phase 2 Shadow operations and inventory tagging (Day 6-15), Phase 3 Cutover with uniformed and background-verified workforce (Day 16-20), Phase 4 Digital QR code setup (Day 21-30), and Phase 5 90-day SLA performance review."
+          "A structured transition pipeline eliminates disruption for office occupants. KD Facilities Management Services employs a proven 5-step onboarding protocol: Phase 1 On-site engineering audit (Day 1-5), Phase 2 Shadow operations and inventory tagging (Day 6-15), Phase 3 Cutover with uniformed and background-verified workforce (Day 16-20), Phase 4 Digital QR code setup (Day 21-30), and Phase 5 90-day SLA performance review."
         ]
       }
     ],
@@ -173,7 +173,7 @@ export const insightsArticles: InsightArticle[] = [
         heading: "2. The Mandatory Police Verification Process",
         paragraphs: [
           "Every security guard deployed to a commercial facility must possess a formal Police Verification Certificate issued by the local district police commissionerate.",
-          "At KD Global Facilities, our security onboarding protocol mandates biometrics capture, national criminal record database check, Aadhaar address authentication, and local police verification before any guard is issued a uniform or posted to a client gate."
+          "At KD Facilities Management Services, our security onboarding protocol mandates biometrics capture, national criminal record database check, Aadhaar address authentication, and local police verification before any guard is issued a uniform or posted to a client gate."
         ]
       },
       {
@@ -192,7 +192,7 @@ export const insightsArticles: InsightArticle[] = [
         sectionId: "technology-integration",
         heading: "4. Tech-Enabled Guarding: RFID & QR Patrolling",
         paragraphs: [
-          "Modern security management has evolved beyond manual logbooks. KD Global Facilities equips on-site guarding teams with digital visitor management systems (VMS), cloud-synced vehicle entry recognition, and RFID electronic night patrol wands.",
+          "Modern security management has evolved beyond manual logbooks. KD Facilities Management Services equips on-site guarding teams with digital visitor management systems (VMS), cloud-synced vehicle entry recognition, and RFID electronic night patrol wands.",
           "Site supervisors must scan geo-tagged checkpoints across basements, stairwells, and perimeter fences during designated night patrol rounds, providing clients with timestamped audit trails accessible via an online portal."
         ]
       },
@@ -268,7 +268,7 @@ export const insightsArticles: InsightArticle[] = [
         sectionId: "30-minute-loop",
         heading: "2. The 30-Minute Restroom Turnaround Cycle",
         paragraphs: [
-          "KD Global Facilities enforces a structured 30-minute custodial cycle across Grade-A office buildings in Gurugram, Delhi, and Noida:",
+          "KD Facilities Management Services enforces a structured 30-minute custodial cycle across Grade-A office buildings in Gurugram, Delhi, and Noida:",
           "Every 30 minutes during peak operational hours (09:00 to 19:00), a designated attendant checks vanity counters, restocks tissue rolls, cleans faucet watermarks with specialized anti-scaling solution, dry-mops floor tiles, and verifies automated air freshener cartridges."
         ]
       },

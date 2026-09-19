@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const article = insightsArticles.find((a) => a.slug === params.slug);
   if (!article) return {};
 
-  const pageUrl = `https://www.kdglobalfacilities.com/insights/${article.slug}`;
+  const pageUrl = `https://www.kdfmservices.com/insights/${article.slug}`;
 
   return {
     title: article.seoTitle,
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
           url: article.featuredImage,
           width: 1200,
           height: 630,
-          alt: `${article.title} - KD Global Facilities`,
+          alt: `${article.title} - KD Facilities Management Services`,
         },
       ],
     },
@@ -77,7 +77,7 @@ export default function ArticleDetailPage({ params }: ArticlePageProps) {
     notFound();
   }
 
-  const pageUrl = `https://www.kdglobalfacilities.com/insights/${article.slug}`;
+  const pageUrl = `https://www.kdfmservices.com/insights/${article.slug}`;
 
   const breadcrumbs = [
     { name: "Home", url: "/" },
@@ -97,7 +97,7 @@ export default function ArticleDetailPage({ params }: ArticlePageProps) {
           datePublished: article.publishedDate,
           dateModified: article.modifiedDate,
           authorName: article.author,
-          image: `https://www.kdglobalfacilities.com${article.featuredImage}`,
+          image: `https://www.kdfmservices.com${article.featuredImage}`,
         }}
       />
 

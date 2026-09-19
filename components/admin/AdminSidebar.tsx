@@ -8,6 +8,7 @@ import {
   Users,
   Handshake,
   Building,
+  Building2,
   Sparkles,
   Cpu,
   Briefcase,
@@ -97,6 +98,11 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
       name: "Services & Scope",
       href: "/admin/services",
       icon: Sparkles,
+    },
+    {
+      name: "Industries & Verticals",
+      href: "/admin/industries",
+      icon: Building2,
     },
     {
       name: "Robotics & Tech Fleet",

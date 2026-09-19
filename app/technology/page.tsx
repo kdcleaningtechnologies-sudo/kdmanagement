@@ -20,11 +20,11 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Facility Technology & Robotics | KD Global Facilities",
+  title: "Facility Technology & Robotics | KD Facilities Management Services",
   description:
     "Explore KD Cleaning Technologies: autonomous drone façade washing, water-fed pure water systems, QR inspection loops, and biometric attendance across Gurugram, Delhi, and Noida.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/technology",
+    canonical: "https://www.kdfmservices.com/technology",
   },
   keywords: [
     "Drone Facade Cleaning India",
@@ -142,7 +142,7 @@ export default function TechnologyPage() {
                 align="left"
                 badge="Engineering & Robotics Division"
                 title={`Introducing ${technologyData.techArmName}`}
-                subtitle="The specialized innovation arm powering every KD Global Facilities site deployment."
+                subtitle="The specialized innovation arm powering every KD Facilities Management Services site deployment."
               />
 
               <p className="text-sm text-slate-700 leading-relaxed">

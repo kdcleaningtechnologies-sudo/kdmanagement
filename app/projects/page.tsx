@@ -11,11 +11,11 @@ import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Projects & Case Studies | KD Global Facilities Gurgaon",
+  title: "Projects & Case Studies | KD Facilities Management Services Gurgaon",
   description:
     "Explore deployment archetypes and operational case studies demonstrating our SLA turnaround times, float-crew reserves, and mechanized transitions across Gurugram and Delhi NCR.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/projects",
+    canonical: "https://www.kdfmservices.com/projects",
   },
   keywords: [
     "Facility Management Case Studies",

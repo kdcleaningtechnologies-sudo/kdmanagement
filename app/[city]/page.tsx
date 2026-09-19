@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   const city = citiesData[params.city.toLowerCase()];
   if (!city) return {};
 
-  const pageUrl = `https://www.kdglobalfacilities.com/${city.slug}`;
+  const pageUrl = `https://www.kdfmservices.com/${city.slug}`;
 
   return {
     title: city.seoTitle,

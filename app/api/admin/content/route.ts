@@ -6,6 +6,7 @@ import { servicesData } from "@/content/services";
 import { technologyData } from "@/content/technology";
 import { careersData } from "@/content/careers";
 import { caseStudiesData } from "@/content/caseStudies";
+import { industriesData } from "@/content/industries";
 
 export async function GET(req: NextRequest) {
   const user = await verifySession();
@@ -24,6 +25,7 @@ export async function GET(req: NextRequest) {
     technology: overrides.technology || technologyData,
     careers: overrides.careers || careersData,
     caseStudies: overrides.caseStudies || caseStudiesData,
+    industries: overrides.industries || industriesData,
   };
 
   if (section && section in data) {

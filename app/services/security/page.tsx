@@ -10,11 +10,11 @@ import { JsonLd } from "@/components/JsonLd";
 const securityCategory = servicesData.find((s) => s.id === "security-services")!;
 
 export const metadata: Metadata = {
-  title: "Security & Guarding Services in Gurgaon & NCR | KD Global Facilities",
+  title: "Security & Guarding Services in Gurgaon & NCR | KD Facilities Management Services",
   description:
     "PASARA-compliant manned security guarding, visitor gate control, electronic RFID night patrols, and emergency response teams across Gurgaon and Delhi NCR.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/services/security",
+    canonical: "https://www.kdfmservices.com/services/security",
   },
   keywords: [
     "Security Services Gurgaon",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "Industrial Security Services Manesar",
   ],
   openGraph: {
-    title: "Security & Guarding Services in Gurgaon & NCR | KD Global Facilities",
+    title: "Security & Guarding Services in Gurgaon & NCR | KD Facilities Management Services",
     description: "PASARA-certified 24/7 manned security guards, RFID night patrolling, and digital gate management.",
-    url: "https://www.kdglobalfacilities.com/services/security",
+    url: "https://www.kdfmservices.com/services/security",
     type: "website",
     locale: "en_IN",
   },
@@ -64,7 +64,7 @@ export default function SecurityServicesPage() {
     name: "24/7 PASARA Manned Security & Guarding",
     serviceType: "Private Security Agency & Manned Guarding",
     description: securityCategory.description,
-    url: "https://www.kdglobalfacilities.com/services/security",
+    url: "https://www.kdfmservices.com/services/security",
   };
 
   return (

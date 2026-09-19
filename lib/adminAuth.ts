@@ -7,7 +7,7 @@ const AUTH_FILE_PATH = path.join(process.cwd(), "data", "admin_auth.json");
 const ADMIN_SESSION_COOKIE = "kd_admin_session";
 
 // Default admin credentials (configurable via environment variables)
-const DEFAULT_ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@kdglobalfacilities.com";
+const DEFAULT_ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@kdfmservices.com";
 const DEFAULT_ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "kdadmin2026";
 
 const DEFAULT_ADMIN = {

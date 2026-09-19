@@ -19,15 +19,15 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.kdglobalfacilities.com"),
+  metadataBase: new URL("https://kdfmservices.com"),
   title: {
-    default: "Facility Management Company in Gurgaon | KD Global Facilities",
-    template: "%s | KD Global Facilities",
+    default: "Facility Management Company in Gurgaon | KD Facilities Management Services",
+    template: "%s | KD Facilities Management Services",
   },
   description:
-    "Leading Integrated Facility Management (IFM) company in Gurgaon and Delhi NCR. Commercial housekeeping, 24/7 PASARA security, HVAC/MEP technical maintenance, and autonomous drone façade cleaning.",
+    "Leading Integrated Facility Management (IFM) company in Gurgaon, Delhi, Noida, Greater Noida, Faridabad, and IMT Manesar. Commercial housekeeping, 24/7 PASARA security, HVAC/MEP technical maintenance, and autonomous drone façade cleaning.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com",
+    canonical: "https://kdfmservices.com",
   },
   keywords: [
     "Facility Management Company in Gurgaon",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "Integrated Facility Management Company",
     "Housekeeping Services Gurugram",
     "Security Services NCR",
-    "Facility Management Company India",
+    "Facility Management Company Delhi NCR",
     "Corporate Housekeeping Services",
     "Technical Facility Services",
     "Corporate Cleaning Services Gurgaon",
@@ -50,25 +50,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.kdglobalfacilities.com",
+    url: "https://kdfmservices.com",
     siteName: companyInfo.name,
-    title: "KD Global Facilities — Integrated Facility Management & Smarter Operations",
+    title: "KD Facilities Management Services — Integrated Facility Management & Smarter Operations",
     description:
       "Single-point IFM partner in Delhi NCR for corporate offices, hospitals, industrial plants, and commercial campuses. Flexible AMCs with zero lock-in.",
     images: [
       {
-        url: "/images/hero-placeholder.jpg",
+        url: "/images/kd-hero-staff.png",
         width: 1200,
         height: 630,
-        alt: "KD Global Facilities Corporate Facility Management",
+        alt: "KD Facilities Management Services Corporate Facility Management",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KD Global Facilities — Integrated Facility Management",
-    description: "Smarter operations, verified workforce, 24/7 security, and mechanized facility management.",
-    images: ["/images/hero-placeholder.jpg"],
+    title: "KD Facilities Management Services — Integrated Facility Management",
+    description: "Smarter operations, verified workforce, 24/7 security, and mechanized facility management across Delhi NCR.",
+    images: ["/images/kd-hero-staff.png"],
   },
   robots: {
     index: true,

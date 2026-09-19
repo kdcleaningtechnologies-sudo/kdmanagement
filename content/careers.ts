@@ -6,11 +6,11 @@ export interface JobOpening {
   type: string;
   experience: string;
   description: string;
-  requirements: string[];
+  requirements: string[]
 }
 
 export const careersData = {
-  badge: "Join KD Global Facilities",
+  badge: "Join KD Facilities Management Services",
   headline: "Build Your Career with India's Modern Facility Management Team",
   subheadline: "We are expanding rapidly across Gurgaon, Delhi, Noida, and Manesar. We provide fair wages, full statutory benefits (PF, ESIC, insurance), continuous skill certifications, and clear leadership growth paths.",
   culturePoints: [

@@ -15,12 +15,12 @@ import { JsonLd } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "About Us | Integrated Facility Management Company in Gurgaon",
   description:
-    "Learn about KD Global Facilities, our leadership, PASARA & statutory compliance, and our specialized technology arm KD Cleaning Technologies across Gurugram, Manesar, Noida, and Delhi NCR.",
+    "Learn about KD Facilities Management Services, our leadership, PASARA & statutory compliance, and our specialized technology arm KD Cleaning Technologies across Gurugram, Manesar, Noida, and Delhi NCR.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/about",
+    canonical: "https://www.kdfmservices.com/about",
   },
   keywords: [
-    "About KD Global Facilities",
+    "About KD Facilities Management Services",
     "Facility Management Company Gurgaon",
     "Corporate Housekeeping Agency NCR",
     "PASARA Compliance Haryana",
@@ -48,7 +48,7 @@ export default function AboutPage() {
               Transforming Facility Management into a Strategic Corporate Advantage
             </h1>
             <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-              KD Global Facilities was founded to bridge the critical gap between unorganized manpower contractors and overpriced global conglomerates. We provide institutional-grade soft, security, and MEP engineering services with modern digital accountability across Gurugram, Manesar, Noida, Faridabad, and Delhi NCR.
+              KD Facilities Management Services was founded to bridge the critical gap between unorganized manpower contractors and overpriced global conglomerates. We provide institutional-grade soft, security, and MEP engineering services with modern digital accountability across Gurugram, Manesar, Noida, Faridabad, and Delhi NCR.
             </p>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
 
               <div className="space-y-3 text-sm text-slate-700 leading-relaxed">
                 <p>
-                  Every engagement with KD Global Facilities is bound by an objective Service Level Agreement (SLA). We deploy biometric facial attendance to eliminate ghost workers, install QR checkpoints across all restrooms to verify actual cleaning sweeps, and provide facility heads with automated 7 PM photo handover reports.
+                  Every engagement with KD Facilities Management Services is bound by an objective Service Level Agreement (SLA). We deploy biometric facial attendance to eliminate ghost workers, install QR checkpoints across all restrooms to verify actual cleaning sweeps, and provide facility heads with automated 7 PM photo handover reports.
                 </p>
                 <p>
                   Through our specialized equipment arm,{" "}
@@ -292,7 +292,7 @@ export default function AboutPage() {
       <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <LeadForm
-            headline="Partner with KD Global Facilities"
+            headline="Partner with KD Facilities Management Services"
             subheadline="Let's discuss how our integrated facility framework can elevate your property while optimizing operating costs."
           />
         </div>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "Autonomous drone façade cleaning, Italian marble floor crystallization, integrated pest management, and IAQ disinfection across Gurgaon, Noida, and Delhi NCR.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/services/specialised",
+    canonical: "https://www.kdfmservices.com/services/specialised",
   },
   keywords: [
     "Specialised Cleaning Services Gurgaon",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Specialised Cleaning & Drone Façade Washing in Gurgaon | KD",
     description: "High-tech façade cleaning drones, diamond marble polishing, and commercial pest management.",
-    url: "https://www.kdglobalfacilities.com/services/specialised",
+    url: "https://www.kdfmservices.com/services/specialised",
     type: "website",
     locale: "en_IN",
   },
@@ -64,7 +64,7 @@ export default function SpecialisedServicesPage() {
     name: "Specialised Facility Services & Autonomous Drone Façade Washing",
     serviceType: "Specialized High-Rise Exterior & Floor Restoration Services",
     description: specialisedCategory.description,
-    url: "https://www.kdglobalfacilities.com/services/specialised",
+    url: "https://www.kdfmservices.com/services/specialised",
   };
 
   return (

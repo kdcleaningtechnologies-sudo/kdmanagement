@@ -10,11 +10,11 @@ import { JsonLd } from "@/components/JsonLd";
 const technicalCategory = servicesData.find((s) => s.id === "technical-services")!;
 
 export const metadata: Metadata = {
-  title: "Engineering & Technical MEP Services in Gurgaon & NCR | KD Global Facilities",
+  title: "Engineering & Technical MEP Services in Gurgaon & NCR | KD Facilities Management Services",
   description:
     "Hard FM, HVAC chiller plant operations, HT/LT substation maintenance, DG backup, and STP/WTP operations across Gurgaon, Manesar, Noida, and Delhi NCR.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/services/technical",
+    canonical: "https://www.kdfmservices.com/services/technical",
   },
   keywords: [
     "Technical Services Gurgaon",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "Commercial MEP Maintenance Delhi NCR",
   ],
   openGraph: {
-    title: "Engineering & Technical MEP Services in Gurgaon & NCR | KD Global Facilities",
+    title: "Engineering & Technical MEP Services in Gurgaon & NCR | KD Facilities Management Services",
     description: "Planned preventive maintenance (PPM) for commercial HVAC, 11kV electrical substations, and automated DG backups.",
-    url: "https://www.kdglobalfacilities.com/services/technical",
+    url: "https://www.kdfmservices.com/services/technical",
     type: "website",
     locale: "en_IN",
   },
@@ -64,7 +64,7 @@ export default function TechnicalServicesPage() {
     name: "Hard Services & Technical MEP Maintenance",
     serviceType: "Commercial Building Electro-Mechanical Maintenance",
     description: technicalCategory.description,
-    url: "https://www.kdglobalfacilities.com/services/technical",
+    url: "https://www.kdfmservices.com/services/technical",
   };
 
   return (

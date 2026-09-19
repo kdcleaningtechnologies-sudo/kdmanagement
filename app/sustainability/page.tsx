@@ -14,11 +14,11 @@ import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Sustainability & ESG Facility Operations | KD Global Facilities",
+  title: "Sustainability & ESG Facility Operations | KD Facilities Management Services",
   description:
     "Eco-friendly facility management supporting corporate ESG & BRSR reporting. Zero-runoff pure water systems, Diversey green chemicals, and waste segregation across Gurgaon, Noida, and Delhi NCR.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/sustainability",
+    canonical: "https://www.kdfmservices.com/sustainability",
   },
   keywords: [
     "Green Facility Management Gurgaon",
@@ -180,7 +180,7 @@ export default function SustainabilityPage() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                  Is your commercial tower applying for or maintaining LEED Platinum, Gold, or IGBC Green Building certification? KD Global Facilities supplies:
+                  Is your commercial tower applying for or maintaining LEED Platinum, Gold, or IGBC Green Building certification? KD Facilities Management Services supplies:
                 </p>
 
                 <div className="space-y-2 text-xs text-slate-300">

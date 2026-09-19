@@ -108,7 +108,7 @@ export async function POST(req: NextRequest) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "KD Facilities Leads <leads@kdglobalfacilities.com>",
+            from: "KD Facilities Leads <leads@kdfmservices.com>",
             to: [notificationEmail],
             subject: `New Lead: ${body.name} (${body.company || body.city}) - Facility Assessment`,
             html: emailHtml,

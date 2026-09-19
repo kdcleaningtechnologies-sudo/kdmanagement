@@ -16,11 +16,11 @@ import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Integrated Facility Management (IFM) in Gurgaon & NCR | KD Global Facilities",
+  title: "Integrated Facility Management (IFM) in Gurgaon & NCR | KD Facilities Management Services",
   description:
     "End-to-end Integrated Facility Management services across Gurugram, Manesar, Noida, and Delhi NCR. Single SLA contracts for soft services, 24/7 security, MEP engineering, and tech-driven operations.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/facility-management",
+    canonical: "https://www.kdfmservices.com/facility-management",
   },
   keywords: [
     "integrated facility management company",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "integrated facility management Gurgaon",
   ],
   openGraph: {
-    title: "Integrated Facility Management (IFM) in Gurgaon & NCR | KD Global Facilities",
+    title: "Integrated Facility Management (IFM) in Gurgaon & NCR | KD Facilities Management Services",
     description: "Single-point IFM partner in Delhi NCR: corporate housekeeping, 24/7 PASARA security, and MEP engineering under one unified SLA.",
-    url: "https://www.kdglobalfacilities.com/facility-management",
+    url: "https://www.kdfmservices.com/facility-management",
     type: "website",
     locale: "en_IN",
   },
@@ -68,7 +68,7 @@ export default function FacilityManagementPage() {
     name: "Integrated Facility Management (IFM)",
     serviceType: "Total Integrated Facility Operations & Property Maintenance",
     description: "End-to-end single-SLA corporate facility management uniting housekeeping, 24/7 manned security, MEP plant maintenance, and robotics.",
-    url: "https://www.kdglobalfacilities.com/facility-management",
+    url: "https://www.kdfmservices.com/facility-management",
   };
 
   return (

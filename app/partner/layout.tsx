@@ -3,11 +3,11 @@ import React from "react";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Commercial Broker & Channel Partner Program | KD Global Facilities",
+  title: "Commercial Broker & Channel Partner Program | KD Facilities Management Services",
   description:
-    "Partner with KD Global Facilities: Earn recurring monthly referral commissions on corporate Annual Maintenance Contracts (AMCs) across Gurgaon, Delhi NCR, and Noida.",
+    "Partner with KD Facilities Management Services: Earn recurring monthly referral commissions on corporate Annual Maintenance Contracts (AMCs) across Gurgaon, Delhi NCR, and Noida.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/partner",
+    canonical: "https://www.kdfmservices.com/partner",
   },
   keywords: [
     "Facility Management Referral Partner",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     "Corporate Channel Partner Program NCR",
   ],
   openGraph: {
-    title: "Commercial Broker & Channel Partner Program | KD Global Facilities",
+    title: "Commercial Broker & Channel Partner Program | KD Facilities Management Services",
     description: "Monetize your commercial client relationships with predictable recurring revenue on corporate facility contracts.",
-    url: "https://www.kdglobalfacilities.com/partner",
+    url: "https://www.kdfmservices.com/partner",
     type: "website",
     locale: "en_IN",
   },

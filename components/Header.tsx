@@ -15,16 +15,24 @@ import {
   Building2,
   CheckCircle2,
   ExternalLink,
+  Search,
+  Briefcase,
 } from "lucide-react";
 import { companyInfo } from "@/content/company";
 import { servicesData } from "@/content/services";
+import { industriesData } from "@/content/industries";
 import { BrandLogo } from "@/components/BrandLogo";
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [industriesDropdownOpen, setIndustriesDropdownOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const industriesRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -39,13 +47,24 @@ export const Header: React.FC = () => {
     // Close menus on route change
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
+    setIndustriesDropdownOpen(false);
+    setSearchOpen(false);
   }, [pathname]);
 
-  // Click outside to close mega menu
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  // Click outside to close menus
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setServicesDropdownOpen(false);
+      }
+      if (industriesRef.current && !industriesRef.current.contains(event.target as Node)) {
+        setIndustriesDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -133,12 +152,11 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center group py-2">
+          <Link href="/" className="flex items-center group py-2 flex-shrink-0 mr-3 lg:mr-6">
             <BrandLogo variant="facilities" size="md" theme="light" />
           </Link>
 
-          {/* Desktop Nav Links */}
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav Links matching exact attachment order */}
           <nav className="hidden xl:flex items-center gap-1">
             <Link
               href="/"
@@ -151,34 +169,18 @@ export const Header: React.FC = () => {
               Home
             </Link>
 
-            <Link
-              href="/about"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
-                pathname === "/about"
-                  ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
-                  : "text-navy-900 hover:text-brandblue-600"
-              }`}
-            >
-              About Us
-            </Link>
-
-            <Link
-              href="/facility-management"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
-                pathname === "/facility-management"
-                  ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
-                  : "text-navy-900 hover:text-brandblue-600"
-              }`}
-            >
-              Facility Management
-            </Link>
-
-            {/* Mega Menu Trigger: Services */}
+            {/* Services Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
                 type="button"
-                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                onMouseEnter={() => setServicesDropdownOpen(true)}
+                onClick={() => {
+                  setServicesDropdownOpen(!servicesDropdownOpen);
+                  setIndustriesDropdownOpen(false);
+                }}
+                onMouseEnter={() => {
+                  setServicesDropdownOpen(true);
+                  setIndustriesDropdownOpen(false);
+                }}
                 className={`px-3 py-2 text-xs font-semibold rounded-lg flex items-center gap-1 transition-all ${
                   pathname.startsWith("/services")
                     ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
@@ -193,7 +195,6 @@ export const Header: React.FC = () => {
                 />
               </button>
 
-              {/* Mega-Menu Panel */}
               {servicesDropdownOpen && (
                 <div
                   onMouseLeave={() => setServicesDropdownOpen(false)}
@@ -251,17 +252,65 @@ export const Header: React.FC = () => {
               )}
             </div>
 
-            <Link
-              href="/industries"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
-                pathname === "/industries"
-                  ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
-                  : "text-navy-900 hover:text-brandblue-600"
-              }`}
-            >
-              Industries
-            </Link>
+            {/* Industries Dropdown */}
+            <div className="relative" ref={industriesRef}>
+              <button
+                type="button"
+                onClick={() => {
+                  setIndustriesDropdownOpen(!industriesDropdownOpen);
+                  setServicesDropdownOpen(false);
+                }}
+                onMouseEnter={() => {
+                  setIndustriesDropdownOpen(true);
+                  setServicesDropdownOpen(false);
+                }}
+                className={`px-3 py-2 text-xs font-semibold rounded-lg flex items-center gap-1 transition-all ${
+                  pathname.startsWith("/industries")
+                    ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
+                    : "text-navy-900 hover:text-brandblue-600"
+                }`}
+              >
+                Industries
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    industriesDropdownOpen ? "rotate-180 text-brandblue-600" : ""
+                  }`}
+                />
+              </button>
 
+              {industriesDropdownOpen && (
+                <div
+                  onMouseLeave={() => setIndustriesDropdownOpen(false)}
+                  className="absolute left-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 z-50 animate-fade-in space-y-1"
+                >
+                  <div className="px-3 py-1.5 border-b border-slate-100 mb-2">
+                    <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                      Target Sectors
+                    </p>
+                  </div>
+                  {industriesData.map((ind) => (
+                    <Link
+                      key={ind.id}
+                      href={`/industries#${ind.slug}`}
+                      className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs text-slate-700 hover:bg-gradient-to-r hover:from-brandblue-50 hover:to-brandcyan-50 hover:text-brandblue-600 font-medium transition-colors"
+                    >
+                      <Briefcase className="w-3.5 h-3.5 text-brandcyan-600 flex-shrink-0" />
+                      <span className="truncate">{ind.name}</span>
+                    </Link>
+                  ))}
+                  <div className="pt-2 mt-2 border-t border-slate-100">
+                    <Link
+                      href="/industries"
+                      className="block text-center text-xs font-bold text-brandblue-600 hover:text-brandblue-700 py-1"
+                    >
+                      View All Industries →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Technology */}
             <Link
               href="/technology"
               className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
@@ -273,39 +322,19 @@ export const Header: React.FC = () => {
               Technology
             </Link>
 
+            {/* About Us */}
             <Link
-              href="/projects"
+              href="/about"
               className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
-                pathname === "/projects"
+                pathname === "/about"
                   ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
                   : "text-navy-900 hover:text-brandblue-600"
               }`}
             >
-              Projects
+              About Us
             </Link>
 
-            <Link
-              href="/insights"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
-                pathname?.startsWith("/insights")
-                  ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
-                  : "text-navy-900 hover:text-brandblue-600"
-              }`}
-            >
-              Insights
-            </Link>
-
-            <Link
-              href="/sustainability"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
-                pathname === "/sustainability"
-                  ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
-                  : "text-navy-900 hover:text-brandblue-600"
-              }`}
-            >
-              Sustainability
-            </Link>
-
+            {/* Careers */}
             <Link
               href="/careers"
               className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
@@ -317,6 +346,19 @@ export const Header: React.FC = () => {
               Careers
             </Link>
 
+            {/* Case Studies (linking to /projects) */}
+            <Link
+              href="/projects"
+              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+                pathname === "/projects"
+                  ? "text-brandblue-600 bg-gradient-to-r from-brandblue-50 to-brandcyan-50/60 font-bold border border-brandcyan-200/50"
+                  : "text-navy-900 hover:text-brandblue-600"
+              }`}
+            >
+              Case Studies
+            </Link>
+
+            {/* Contact */}
             <Link
               href="/contact"
               className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
@@ -329,13 +371,59 @@ export const Header: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Action CTA */}
+          {/* Right Action Area: Search icon + "Request a Quote" CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
+            {/* Search Trigger */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setSearchOpen(!searchOpen)}
+                className="p-2 text-slate-500 hover:text-brandblue-600 hover:bg-slate-100 rounded-lg transition-colors"
+                title="Search services & solutions"
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </button>
+
+              {searchOpen && (
+                <div className="absolute right-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-slate-200 p-2 z-50 animate-fade-in">
+                  <div className="flex items-center gap-2 px-2.5 py-1.5 bg-slate-50 rounded-lg border border-slate-200">
+                    <Search className="w-3.5 h-3.5 text-slate-400" />
+                    <input
+                      ref={searchInputRef}
+                      type="text"
+                      placeholder="Search facility services..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" && searchQuery.trim()) {
+                          window.location.href = `/services?q=${encodeURIComponent(searchQuery)}`;
+                        }
+                      }}
+                      className="w-full bg-transparent text-xs text-navy-950 placeholder-slate-400 focus:outline-none"
+                    />
+                    {searchQuery && (
+                      <button onClick={() => setSearchQuery("")} className="text-slate-400 hover:text-slate-600">
+                        <X className="w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
+                  <div className="mt-2 px-2 py-1 text-[11px] text-slate-500 flex justify-between items-center">
+                    <span>Press Enter to search</span>
+                    <Link href="/services" className="text-brandblue-600 font-semibold hover:underline">
+                      Directory →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Request a Quote Button */}
             <Link
               href="/contact#assessment-form"
-              className="px-5 py-2.5 rounded-xl btn-brand-primary text-xs tracking-wide shadow-md hover:shadow-lg"
+              className="px-5 py-2.5 rounded-xl btn-brand-primary text-xs font-bold tracking-wide shadow-md hover:shadow-lg"
             >
-              Free Assessment
+              Request a Quote
             </Link>
           </div>
 
@@ -361,20 +449,6 @@ export const Header: React.FC = () => {
             Home
           </Link>
 
-          <Link
-            href="/about"
-            className="block py-2 text-sm font-semibold text-navy-950 border-b border-slate-100"
-          >
-            About Us
-          </Link>
-
-          <Link
-            href="/facility-management"
-            className="block py-2 text-sm font-semibold text-navy-950 border-b border-slate-100"
-          >
-            Facility Management (Overview)
-          </Link>
-
           {/* Mobile Services Sub-list */}
           <div className="py-2 border-b border-slate-100">
             <p className="text-xs font-semibold text-slate-500 mb-2">
@@ -385,7 +459,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={cat.id}
                   href={`/services/${cat.slug}`}
-                  className="block text-sm font-medium text-navy-900 hover:text-brandgreen-600 py-1"
+                  className="block text-sm font-medium text-navy-900 hover:text-brandblue-600 py-1"
                 >
                   {cat.title}
                 </Link>
@@ -397,35 +471,21 @@ export const Header: React.FC = () => {
             href="/industries"
             className="block py-2 text-sm font-semibold text-navy-950 border-b border-slate-100"
           >
-            Industries We Serve
+            Industries
           </Link>
 
           <Link
             href="/technology"
             className="block py-2 text-sm font-semibold text-navy-950 border-b border-slate-100"
           >
-            Technology & Robotics
+            Technology
           </Link>
 
           <Link
-            href="/projects"
+            href="/about"
             className="block py-2 text-sm font-semibold text-navy-950 border-b border-slate-100"
           >
-            Projects & Case Studies
-          </Link>
-
-          <Link
-            href="/insights"
-            className="block py-2 text-sm font-semibold text-brandblue-600 border-b border-slate-100"
-          >
-            Facility Insights & Guides
-          </Link>
-
-          <Link
-            href="/sustainability"
-            className="block py-2 text-sm font-semibold text-navy-950 border-b border-slate-100"
-          >
-            Sustainability & ESG
+            About Us
           </Link>
 
           <Link
@@ -436,11 +496,27 @@ export const Header: React.FC = () => {
           </Link>
 
           <Link
+            href="/projects"
+            className="block py-2 text-sm font-semibold text-navy-950 border-b border-slate-100"
+          >
+            Case Studies
+          </Link>
+
+          <Link
             href="/contact"
             className="block py-2 text-sm font-semibold text-navy-950 border-b border-slate-100"
           >
-            Contact Us
+            Contact
           </Link>
+
+          <div className="pt-2">
+            <Link
+              href="/contact#assessment-form"
+              className="block w-full py-3 text-center rounded-xl btn-brand-primary text-sm font-bold shadow-md"
+            >
+              Request a Quote
+            </Link>
+          </div>
 
           <Link
             href="/partner"

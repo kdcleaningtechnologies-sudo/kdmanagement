@@ -56,12 +56,12 @@ export const JsonLd: React.FC<JsonLdProps> = ({
     schemaData = {
       "@context": "https://schema.org",
       "@type": type === "LocalBusiness" ? "ProfessionalService" : "Organization",
-      "@id": "https://www.kdglobalfacilities.com/#organization",
+      "@id": "https://www.kdfmservices.com/#organization",
       "name": city ? `${companyInfo.name} - ${city}` : companyInfo.name,
       "legalName": companyInfo.legalName,
-      "url": "https://www.kdglobalfacilities.com",
-      "logo": "https://www.kdglobalfacilities.com/images/kd-logo.png",
-      "image": "https://www.kdglobalfacilities.com/images/hero-placeholder.jpg",
+      "url": "https://www.kdfmservices.com",
+      "logo": "https://www.kdfmservices.com/images/kd-logo.png",
+      "image": "https://www.kdfmservices.com/images/hero-placeholder.jpg",
       "description": companyInfo.heroSubheadline,
       "telephone": companyInfo.phone,
       "email": companyInfo.email,
@@ -107,7 +107,7 @@ export const JsonLd: React.FC<JsonLdProps> = ({
       ],
       "sameAs": [
         "https://kdcleaningtechnologies.com/",
-        "https://www.linkedin.com/company/kd-global-facilities",
+        "https://www.linkedin.com/company/kd-facilities-management-services",
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -161,7 +161,7 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         "name": companyInfo.name,
         "telephone": companyInfo.phone,
         "email": companyInfo.email,
-        "url": "https://www.kdglobalfacilities.com",
+        "url": "https://www.kdfmservices.com",
       },
       "areaServed": [
         "Gurugram",
@@ -179,7 +179,7 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         "@type": "ListItem",
         "position": index + 1,
         "name": b.name,
-        "item": b.url.startsWith("http") ? b.url : `https://www.kdglobalfacilities.com${b.url}`,
+        "item": b.url.startsWith("http") ? b.url : `https://www.kdfmservices.com${b.url}`,
       })),
     };
   } else if (type === "FAQPage" && faqs && faqs.length > 0) {
@@ -213,14 +213,14 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         "name": companyInfo.name,
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.kdglobalfacilities.com/images/kd-logo.png",
+          "url": "https://www.kdfmservices.com/images/kd-logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": article.url,
       },
-      "image": article.image || "https://www.kdglobalfacilities.com/images/hero-placeholder.jpg",
+      "image": article.image || "https://www.kdfmservices.com/images/hero-placeholder.jpg",
     };
   }
 

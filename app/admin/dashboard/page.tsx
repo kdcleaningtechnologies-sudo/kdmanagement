@@ -102,7 +102,7 @@ export default function AdminDashboardPage() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.setAttribute("href", url);
-    link.setAttribute("download", `KD_Global_Leads_${new Date().toISOString().split("T")[0]}.csv`);
+    link.setAttribute("download", `KD_Leads_${new Date().toISOString().split("T")[0]}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -340,7 +340,7 @@ export default function AdminDashboardPage() {
                 <tbody className="divide-y divide-slate-100">
                   {leads.slice(0, 6).map((lead) => {
                     const cleanPhone = lead.phone.replace(/\D/g, "");
-                    const whatsappDirectUrl = `https://wa.me/${cleanPhone.length === 10 ? `91${cleanPhone}` : cleanPhone}?text=${encodeURIComponent(`Hello ${lead.name}, regarding your facility inquiry for KD Global Facilities...`)}`;
+                    const whatsappDirectUrl = `https://wa.me/${cleanPhone.length === 10 ? `91${cleanPhone}` : cleanPhone}?text=${encodeURIComponent(`Hello ${lead.name}, regarding your facility inquiry for KD Facilities Management Services...`)}`;
 
                     return (
                       <tr key={lead.id} className="hover:bg-slate-50/60 transition-colors">

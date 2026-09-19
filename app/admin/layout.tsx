@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { AdminShell } from "@/components/admin/AdminShell";
 
 export const metadata: Metadata = {
-  title: "Admin Portal | KD Global Facilities",
-  description: "Executive operations and content management console for KD Global Facilities.",
+  title: "Admin Portal | KD Facilities Management Services",
+  description: "Executive operations and content management console for KD Facilities Management Services.",
   robots: {
     index: false,
     follow: false,

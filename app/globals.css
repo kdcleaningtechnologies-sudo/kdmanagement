@@ -93,3 +93,68 @@ body {
 .btn-brand-primary {
   @apply bg-gradient-to-r from-[#0066FF] via-[#0091FF] to-[#00D2B4] text-white font-bold transition-all shadow-lg hover:shadow-xl hover:shadow-brandblue-500/25 hover:brightness-105 active:scale-[0.99];
 }
+
+/* Operational Telemetry Keyframes */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scan-laser {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 96%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-drone {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-5px) translateX(3px);
+  }
+  75% {
+    transform: translateY(4px) translateX(-3px);
+  }
+}
+
+@keyframes grid-flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 24px 24px;
+  }
+}
+
+.animate-radar {
+  animation: radar-sweep 4s linear infinite;
+}
+
+.animate-scan-laser {
+  animation: scan-laser 2.5s ease-in-out infinite alternate;
+}
+
+.animate-float-drone {
+  animation: float-drone 3.5s ease-in-out infinite;
+}
+
+.bg-telemetry-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 153, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 153, 255, 0.08) 1px, transparent 1px);
+}
+

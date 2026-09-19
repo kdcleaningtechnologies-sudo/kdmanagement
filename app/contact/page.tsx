@@ -16,14 +16,14 @@ import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact Us & Free Facility Assessment | KD Global Facilities Gurgaon",
+  title: "Contact Us & Free Facility Assessment | KD Facilities Management Services Gurgaon",
   description:
     "Request a free site assessment for your facility in Gurgaon or Delhi NCR. Contact our 24/7 operations desk, WhatsApp team, or visit our Sector 31 headquarters.",
   alternates: {
-    canonical: "https://www.kdglobalfacilities.com/contact",
+    canonical: "https://www.kdfmservices.com/contact",
   },
   keywords: [
-    "Contact KD Global Facilities",
+    "Contact KD Facilities Management Services",
     "Facility Management Gurgaon Office",
     "Request Facility Audit Gurugram",
     "Commercial Cleaning Quote Delhi NCR",

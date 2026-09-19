@@ -5,6 +5,7 @@ import { servicesData } from "@/content/services";
 import { technologyData } from "@/content/technology";
 import { careersData } from "@/content/careers";
 import { caseStudiesData } from "@/content/caseStudies";
+import { industriesData } from "@/content/industries";
 import { getSupabaseAdminClient } from "./supabase";
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -69,6 +70,7 @@ export interface ContentOverrides {
   technology?: typeof technologyData;
   careers?: typeof careersData;
   caseStudies?: typeof caseStudiesData;
+  industries?: typeof industriesData;
   updatedAt?: string;
 }
 
