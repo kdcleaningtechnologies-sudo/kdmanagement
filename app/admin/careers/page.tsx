@@ -27,7 +27,7 @@ export default function AdminCareersPage() {
           const data = await res.json();
           if (data.careers) {
             setCareers(data.careers);
-            setOpenings(data.careers.openings || initialCareersData.openings);
+            setOpenings(Array.isArray(data.careers.openings) ? data.careers.openings : initialCareersData.openings);
           }
         }
       } catch (e) {

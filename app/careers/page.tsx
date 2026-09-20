@@ -1,16 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   MapPin,
   CheckCircle2,
   Send,
   Loader2,
+  Briefcase,
 } from "lucide-react";
-import { careersData } from "@/content/careers";
+import { careersData as defaultCareersData } from "@/content/careers";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export default function CareersPage() {
+  const [careers, setCareers] = useState(defaultCareersData);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -22,6 +24,17 @@ export default function CareersPage() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/content?section=careers", { cache: "no-store" })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.careers) {
+          setCareers(data.careers);
+        }
+      })
+      .catch((err) => console.error("Could not fetch dynamic careers content:", err));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,6 +63,8 @@ export default function CareersPage() {
     }
   };
 
+  const openingsList = Array.isArray(careers.openings) ? careers.openings : [];
+
   return (
     <div className="bg-white">
       {/* Hero Banner */}
@@ -59,13 +74,13 @@ export default function CareersPage() {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-brandblue-500/20 via-brandcyan-500/15 to-transparent text-brandcyan-300 border border-brandcyan-400/30 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-brandblue-500 to-brandcyan-400 animate-pulse" />
-              {careersData.badge}
+              {careers.badge}
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white tracking-tight leading-tight">
-              {careersData.headline}
+              {careers.headline}
             </h1>
             <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-              {careersData.subheadline}
+              {careers.subheadline}
             </p>
           </div>
         </div>
@@ -75,7 +90,7 @@ export default function CareersPage() {
       <section className="py-12 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {careersData.culturePoints.map((pt, i) => (
+            {(careers.culturePoints || defaultCareersData.culturePoints).map((pt, i) => (
               <div key={i} className="p-6 bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-brandcyan-400/80 transition-all space-y-3">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-brandblue-50 to-brandcyan-50 border border-brandcyan-100 flex items-center justify-center text-brandblue-600 mb-1">
                   <CheckCircle2 className="w-5 h-5 text-brandcyan-600" />
@@ -101,55 +116,69 @@ export default function CareersPage() {
             subtitle="Explore our active vacancies or submit a general application to join our talent database."
           />
 
-          <div className="space-y-4 max-w-4xl mx-auto mb-14">
-            {careersData.openings.map((job) => (
-              <div
-                key={job.id}
-                className="p-6 sm:p-7 bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandcyan-400 hover:-translate-y-0.5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6"
-              >
-                <div className="space-y-1.5">
-                  <div className="flex flex-wrap items-center gap-2 text-xs">
-                    <span className="px-2.5 py-0.5 rounded-full bg-brandblue-50 text-brandblue-700 font-semibold border border-brandblue-200">
-                      {job.department}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-                      {job.type}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-                      Exp: {job.experience}
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg font-bold font-heading text-navy-950">
-                    {job.title}
-                  </h3>
-
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                    <MapPin className="w-3.5 h-3.5 text-brandcyan-600" />
-                    <span>{job.location}</span>
-                  </div>
-
-                  <p className="text-xs text-slate-600 leading-relaxed pt-1">
-                    {job.description}
-                  </p>
-                </div>
-
-                <a
-                  href="#apply-form"
-                  onClick={() => {
-                    setFormData((prev) => ({
-                      ...prev,
-                      position: job.title,
-                      location: job.location,
-                    }));
-                  }}
-                  className="px-5 py-2.5 rounded-xl btn-brand-primary text-xs font-semibold whitespace-nowrap self-start sm:self-center shadow-md hover:shadow-lg"
+          {openingsList.length > 0 ? (
+            <div className="space-y-4 max-w-4xl mx-auto mb-14">
+              {openingsList.map((job) => (
+                <div
+                  key={job.id}
+                  className="p-6 sm:p-7 bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brandcyan-400 hover:-translate-y-0.5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6"
                 >
-                  Apply for Role
-                </a>
+                  <div className="space-y-1.5">
+                    <div className="flex flex-wrap items-center gap-2 text-xs">
+                      <span className="px-2.5 py-0.5 rounded-full bg-brandblue-50 text-brandblue-700 font-semibold border border-brandblue-200">
+                        {job.department}
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                        {job.type}
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                        Exp: {job.experience}
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-bold font-heading text-navy-950">
+                      {job.title}
+                    </h3>
+
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                      <MapPin className="w-3.5 h-3.5 text-brandcyan-600" />
+                      <span>{job.location}</span>
+                    </div>
+
+                    <p className="text-xs text-slate-600 leading-relaxed pt-1">
+                      {job.description}
+                    </p>
+                  </div>
+
+                  <a
+                    href="#apply-form"
+                    onClick={() => {
+                      setFormData((prev) => ({
+                        ...prev,
+                        position: job.title,
+                        location: job.location,
+                      }));
+                    }}
+                    className="px-5 py-2.5 rounded-xl btn-brand-primary text-xs font-semibold whitespace-nowrap self-start sm:self-center shadow-md hover:shadow-lg"
+                  >
+                    Apply for Role
+                  </a>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-10 px-6 max-w-2xl mx-auto bg-slate-50 border border-slate-200 rounded-3xl mb-14 space-y-3 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-brandblue-50 border border-brandblue-100 text-brandblue-600 flex items-center justify-center mx-auto">
+                <Briefcase className="w-6 h-6" />
               </div>
-            ))}
-          </div>
+              <h4 className="text-base font-bold text-navy-950 font-heading">
+                No Active Vacancies Currently Listed
+              </h4>
+              <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+                There are currently no active job postings. You can submit a direct application below to be added to our recruitment database for upcoming openings.
+              </p>
+            </div>
+          )}
 
           {/* General Application Form */}
           <div id="apply-form" className="max-w-2xl mx-auto bg-slate-50 rounded-3xl border border-slate-200 p-6 sm:p-8 scroll-mt-28 shadow-xl">
