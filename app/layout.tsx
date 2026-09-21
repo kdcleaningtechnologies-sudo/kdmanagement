@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { companyInfo } from "@/content/company";
 
 const inter = Inter({
@@ -97,6 +98,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col`}
       >
+        <GoogleAnalytics />
         <div id="top" />
         <Header />
         <main className="flex-grow">{children}</main>
