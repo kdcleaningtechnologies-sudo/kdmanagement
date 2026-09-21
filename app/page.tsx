@@ -235,7 +235,7 @@ export default function HomePage() {
 
               {/* Description */}
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
-                KD Facilities Management Services delivers integrated facility management, cleaning, security and maintenance solutions for commercial, residential, industrial and institutional properties across Gurgaon & Delhi NCR.
+                KD Facilities Management Services provides integrated facility management, housekeeping, cleaning, security and technical maintenance solutions for commercial, residential, industrial and institutional properties across Gurgaon and Delhi NCR.
               </p>
 
               {/* Dual CTA Buttons */}
