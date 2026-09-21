@@ -3,7 +3,7 @@ import { citiesData } from "@/content/cities";
 import { insightsArticles } from "@/content/insights";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.kdfmservices.com";
+  const baseUrl = "https://kdfmservices.com";
   const currentDate = new Date();
 
   // Core public pages
