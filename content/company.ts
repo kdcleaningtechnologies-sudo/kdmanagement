@@ -39,6 +39,11 @@ export interface CompanyInfo {
     insurance: string;
   };
   serviceAreas: string[];
+  social: {
+    facebook: string;
+    instagram: string;
+    linkedin: string;
+  };
 }
 
 export const companyInfo: CompanyInfo = {
@@ -88,5 +93,10 @@ export const companyInfo: CompanyInfo = {
     "Faridabad",
     "Manesar & IMT",
   ],
+  social: {
+    facebook: "https://www.facebook.com/profile.php?id=61594423779329",
+    instagram: "https://www.instagram.com/kdfacilitiesmanagementservices/",
+    linkedin: "https://www.linkedin.com/in/kd-facilities-management-services-b6586b438/",
+  },
 };
 

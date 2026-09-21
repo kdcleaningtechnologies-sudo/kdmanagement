@@ -107,7 +107,9 @@ export const JsonLd: React.FC<JsonLdProps> = ({
       ],
       "sameAs": [
         "https://kdcleaningtechnologies.com/",
-        "https://www.linkedin.com/company/kd-facilities-management-services",
+        companyInfo.social.linkedin,
+        companyInfo.social.facebook,
+        companyInfo.social.instagram,
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",

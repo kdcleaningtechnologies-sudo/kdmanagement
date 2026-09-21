@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
             {/* Social Links with inline SVGs */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://linkedin.com"
+                href={companyInfo.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-7 h-7 rounded-full bg-navy-900 border border-navy-800 flex items-center justify-center text-slate-400 hover:text-brandcyan-400 hover:border-brandcyan-500/50 transition-colors"
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://facebook.com"
+                href={companyInfo.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-7 h-7 rounded-full bg-navy-900 border border-navy-800 flex items-center justify-center text-slate-400 hover:text-brandcyan-400 hover:border-brandcyan-500/50 transition-colors"
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href={companyInfo.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-7 h-7 rounded-full bg-navy-900 border border-navy-800 flex items-center justify-center text-slate-400 hover:text-brandcyan-400 hover:border-brandcyan-500/50 transition-colors"
