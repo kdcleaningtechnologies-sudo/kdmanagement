@@ -11,6 +11,7 @@ import { companyInfo } from "@/content/company";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { ClientsShowcase } from "@/components/ClientsShowcase";
 
 export const metadata: Metadata = {
   title: "About Us | Integrated Facility Management Company in Gurgaon",
@@ -167,6 +168,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Esteemed Clients */}
+      <ClientsShowcase theme="light" />
 
       {/* Corporate Empanelment & Procurement Section */}
       <section id="compliance" className="py-14 sm:py-20 bg-slate-50 border-y border-slate-200">

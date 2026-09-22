@@ -14,6 +14,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { TierComparisonTable } from "@/components/TierComparisonTable";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { ClientsShowcase } from "@/components/ClientsShowcase";
 
 export const metadata: Metadata = {
   title: "Integrated Facility Management (IFM) in Gurgaon & NCR | KD Facilities Management Services",
@@ -272,6 +273,9 @@ export default function FacilityManagementPage() {
             </div>
           </div>
         </section>
+
+        {/* Clients Showcase */}
+        <ClientsShowcase theme="light" />
 
         {/* Tier Comparison Table Section */}
         <section id="packages" className="py-14 sm:py-20 bg-white">

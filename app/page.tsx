@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
+import { ClientsShowcase } from "@/components/ClientsShowcase";
 
 // 7 Service Cards matching attachment
 const SERVICES_CARDS = [
@@ -370,6 +371,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* CLIENT SHOWCASE: OZONE PHARMA, AVISA HOSPITAL, SARVODAYA HOSPITAL, TRANSCOMM, ESSENTIA */}
+      <ClientsShowcase theme="light" />
 
       {/* 3. OUR SERVICES SECTION MATCHING ATTACHMENT */}
       <section id="services" className="py-16 sm:py-24 bg-white">

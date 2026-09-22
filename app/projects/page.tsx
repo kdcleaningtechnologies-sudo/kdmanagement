@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import {
   MapPin,
   CheckCircle2,
-  AlertCircle,
 } from "lucide-react";
 import { caseStudiesData } from "@/content/caseStudies";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { ClientsShowcase } from "@/components/ClientsShowcase";
 
 export const metadata: Metadata = {
   title: "Projects & Case Studies | KD Facilities Management Services Gurgaon",
@@ -51,15 +51,8 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Mandatory Administrator Note */}
-      <section className="py-5 bg-amber-50 border-b border-amber-200 text-amber-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-start sm:items-center gap-3">
-          <AlertCircle className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5 sm:mt-0" />
-          <p className="text-xs sm:text-sm">
-            <strong>Administrator Note:</strong> The case cards below showcase standard <strong>operational archetypes & problem-solving methodologies</strong>. We do not display unverified client logos or confidential corporate names without explicit contractual sign-off. Real signed case studies and NDAs can be reviewed in private procurement meetings.
-          </p>
-        </div>
-      </section>
+      {/* Featured Client Engagements */}
+      <ClientsShowcase theme="light" />
 
       {/* Case Studies Grid */}
       <section className="py-14 sm:py-20">
