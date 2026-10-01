@@ -95,7 +95,7 @@ export const citiesData: Record<string, CityData> = {
       "Saket District Centre",
     ],
     clientTypes: ["Corporate Headquarters", "Embassies & Consulates", "Private Hospitals & Clinics", "Retail Malls & Luxury Showrooms"],
-    localOffice: "Central Liaison: Okhla Phase III & Barakhamba Road Operations Desk",
+    localOffice: "Delhi Office: C-134, Sarita Vihar, New Delhi — 110076",
     dispatchTime: "Under 40 minutes across Central & South Delhi",
     localContext: "Delhi's commercial footprint ranges from heritage institutional centers in Connaught Place to high-footfall hospitality hubs in Aerocity and dense business parks in Okhla. Managing facilities in Delhi requires specialized protocols for strict green cleaning compliance, dust suppression, and high-security access verification tailored for consulates, healthcare institutions, and corporate headquarters.",
     faqs: [

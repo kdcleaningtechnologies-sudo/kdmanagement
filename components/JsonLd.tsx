@@ -92,6 +92,43 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         "postalCode": companyInfo.address.pincode,
         "addressCountry": "IN",
       },
+      "location": [
+        {
+          "@type": "Place",
+          "name": "Gurgaon Office (HQ)",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": companyInfo.address.street,
+            "addressLocality": companyInfo.address.city,
+            "addressRegion": companyInfo.address.state,
+            "postalCode": companyInfo.address.pincode,
+            "addressCountry": "IN",
+          },
+        },
+        {
+          "@type": "Place",
+          "name": "Delhi Office",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": companyInfo.delhiAddress.street,
+            "addressLocality": companyInfo.delhiAddress.city,
+            "addressRegion": companyInfo.delhiAddress.state,
+            "postalCode": companyInfo.delhiAddress.pincode,
+            "addressCountry": "IN",
+          },
+        },
+        {
+          "@type": "Place",
+          "name": "Netherlands Office",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": companyInfo.netherlandsAddress.street,
+            "addressLocality": companyInfo.netherlandsAddress.city,
+            "postalCode": companyInfo.netherlandsAddress.pincode,
+            "addressCountry": "NL",
+          },
+        },
+      ],
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": "28.4595",

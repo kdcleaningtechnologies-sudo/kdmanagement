@@ -81,7 +81,18 @@ export default function ContactPage() {
                       <div>
                         <strong className="text-navy-900 block">Gurgaon Office (HQ):</strong>
                         <span className="text-slate-600">
-                          {companyInfo.address.street}, {companyInfo.address.city}
+                          {companyInfo.address.street}, {companyInfo.address.city}, {companyInfo.address.state} — {companyInfo.address.pincode}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Delhi Office */}
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-4 h-4 text-brandcyan-600 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-navy-900 block">Delhi Office:</strong>
+                        <span className="text-slate-600">
+                          {companyInfo.delhiAddress.street}, {companyInfo.delhiAddress.city}, {companyInfo.delhiAddress.pincode}
                         </span>
                       </div>
                     </div>
@@ -247,6 +258,18 @@ export default function ContactPage() {
 
                   <p className="text-xs text-slate-500 text-center">
                     {companyInfo.address.street}, {companyInfo.address.city}, {companyInfo.address.state} — {companyInfo.address.pincode}
+                  </p>
+                  <p className="text-xs text-slate-500 text-center">
+                    Delhi Office: {companyInfo.delhiAddress.street}, {companyInfo.delhiAddress.city} — {companyInfo.delhiAddress.pincode}
+                    {" · "}
+                    <a
+                      href="https://maps.google.com/?q=C-134+Sarita+Vihar+New+Delhi+110076"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brandblue-600 hover:underline font-semibold"
+                    >
+                      Open in Google Maps
+                    </a>
                   </p>
                 </div>
               </div>

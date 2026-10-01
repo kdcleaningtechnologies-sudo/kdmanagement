@@ -42,6 +42,10 @@ export default function AdminCompanyPage() {
                 ...initialCompanyInfo.address,
                 ...data.company.address,
               },
+              delhiAddress: {
+                ...initialCompanyInfo.delhiAddress,
+                ...data.company.delhiAddress,
+              },
               netherlandsAddress: {
                 ...initialCompanyInfo.netherlandsAddress,
                 ...data.company.netherlandsAddress,
@@ -528,6 +532,54 @@ export default function AdminCompanyPage() {
                     setFormData({
                       ...formData,
                       address: { ...formData.address, pincode: e.target.value },
+                    })
+                  }
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:border-navy-900 focus:outline-none"
+                />
+              </div>
+
+              <div className="sm:col-span-2 pt-3 border-t border-slate-100">
+                <p className="font-bold text-navy-950 mb-3">Delhi Office</p>
+              </div>
+              <div className="sm:col-span-2">
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Street Address
+                </label>
+                <input
+                  type="text"
+                  value={formData.delhiAddress?.street || ""}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      delhiAddress: { ...formData.delhiAddress, street: e.target.value },
+                    })
+                  }
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:border-navy-900 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">City</label>
+                <input
+                  type="text"
+                  value={formData.delhiAddress?.city || ""}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      delhiAddress: { ...formData.delhiAddress, city: e.target.value },
+                    })
+                  }
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:border-navy-900 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">Pincode</label>
+                <input
+                  type="text"
+                  value={formData.delhiAddress?.pincode || ""}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      delhiAddress: { ...formData.delhiAddress, pincode: e.target.value },
                     })
                   }
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:border-navy-900 focus:outline-none"

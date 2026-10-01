@@ -263,7 +263,20 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-3.5 h-3.5 text-brandcyan-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-white text-[11px]">Gurgaon Office:</p>
-                  <p className="text-slate-400 text-[11px] leading-tight">521, Sector 31, Gurgaon</p>
+                  <p className="text-slate-400 text-[11px] leading-tight">
+                    {companyInfo.address.street}, {companyInfo.address.city}
+                  </p>
+                </div>
+              </div>
+
+              {/* Delhi Office */}
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-brandcyan-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-white text-[11px]">Delhi Office:</p>
+                  <p className="text-slate-400 text-[11px] leading-tight">
+                    {companyInfo.delhiAddress.street}, {companyInfo.delhiAddress.city} {companyInfo.delhiAddress.pincode}
+                  </p>
                 </div>
               </div>
 

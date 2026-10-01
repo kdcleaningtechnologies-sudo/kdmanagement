@@ -23,6 +23,14 @@ export interface CompanyInfo {
     pincode: string;
     country: string;
   };
+  delhiAddress: {
+    street: string;
+    locality: string;
+    city: string;
+    state: string;
+    pincode: string;
+    country: string;
+  };
   netherlandsAddress: {
     street: string;
     locality: string;
@@ -76,6 +84,14 @@ export const companyInfo: CompanyInfo = {
     city: "Gurgaon",
     state: "Haryana",
     pincode: "122001",
+    country: "India",
+  },
+  delhiAddress: {
+    street: "C-134, Sarita Vihar",
+    locality: "Sarita Vihar",
+    city: "New Delhi",
+    state: "Delhi",
+    pincode: "110076",
     country: "India",
   },
   netherlandsAddress: {
