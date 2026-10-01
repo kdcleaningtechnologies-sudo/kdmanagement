@@ -282,12 +282,21 @@ export const Footer: React.FC = () => {
               <div className="flex items-start gap-2">
                 <Phone className="w-3.5 h-3.5 text-brandcyan-400 flex-shrink-0 mt-0.5" />
                 <div className="text-[11px] leading-snug">
-                  <a href="tel:+918796682266" className="hover:text-brandcyan-300 transition-colors block font-medium">
-                    +91 8796682266 (India)
+                  <a href={`tel:${companyInfo.phone}`} className="hover:text-brandcyan-300 transition-colors block font-medium">
+                    {companyInfo.phoneIndia}
                   </a>
                   <a href="tel:+31621712992" className="hover:text-brandcyan-300 transition-colors block font-medium text-slate-400">
-                    +31 6 21712992 (Netherlands)
+                    {companyInfo.phoneNetherlands}
                   </a>
+                  <a
+                    href={`tel:${companyInfo.marketingHead.phone}`}
+                    className="hover:text-brandcyan-300 transition-colors block font-medium pt-1"
+                  >
+                    {companyInfo.marketingHead.displayPhone}
+                  </a>
+                  <p className="text-slate-500 text-[10px]">
+                    {companyInfo.marketingHead.name}, {companyInfo.marketingHead.designation}
+                  </p>
                 </div>
               </div>
 

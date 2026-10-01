@@ -65,6 +65,24 @@ export const JsonLd: React.FC<JsonLdProps> = ({
       "description": companyInfo.heroSubheadline,
       "telephone": companyInfo.phone,
       "email": companyInfo.email,
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "telephone": companyInfo.phone,
+          "email": companyInfo.email,
+          "areaServed": "IN",
+          "availableLanguage": ["en", "hi"],
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "name": companyInfo.marketingHead.name,
+          "telephone": companyInfo.marketingHead.phone,
+          "areaServed": "IN",
+          "availableLanguage": ["en", "hi"],
+        },
+      ],
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",

@@ -144,6 +144,17 @@ export const Header: React.FC = () => {
               <Phone className="w-3 h-3 text-brandcyan-400" />
               <span>{companyInfo.phoneNetherlands}</span>
             </a>
+            <span className="text-slate-600 hidden lg:inline">|</span>
+            <a
+              href={`tel:${companyInfo.marketingHead.phone}`}
+              className="hidden lg:flex items-center gap-1 text-white font-medium hover:text-brandcyan-300 transition-colors"
+              title={`${companyInfo.marketingHead.name}, ${companyInfo.marketingHead.designation}`}
+            >
+              <Phone className="w-3 h-3 text-brandcyan-400" />
+              <span>
+                {companyInfo.marketingHead.designation}: {companyInfo.marketingHead.displayPhone}
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -532,6 +543,13 @@ export const Header: React.FC = () => {
             >
               <Phone className="w-4 h-4 text-brandblue-600" />
               Call Operations: {companyInfo.displayPhone}
+            </a>
+            <a
+              href={`tel:${companyInfo.marketingHead.phone}`}
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-50 text-navy-900 text-sm font-bold border border-slate-200 hover:border-brandcyan-300"
+            >
+              <Phone className="w-4 h-4 text-brandblue-600" />
+              {companyInfo.marketingHead.name}, {companyInfo.marketingHead.designation}: {companyInfo.marketingHead.displayPhone}
             </a>
 
             <Link

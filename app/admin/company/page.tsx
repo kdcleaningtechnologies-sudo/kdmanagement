@@ -27,7 +27,30 @@ export default function AdminCompanyPage() {
         if (res.ok) {
           const data = await res.json();
           if (data.company) {
-            setFormData(data.company);
+            setFormData({
+              ...initialCompanyInfo,
+              ...data.company,
+              marketingHead: {
+                ...initialCompanyInfo.marketingHead,
+                ...data.company.marketingHead,
+              },
+              social: {
+                ...initialCompanyInfo.social,
+                ...data.company.social,
+              },
+              address: {
+                ...initialCompanyInfo.address,
+                ...data.company.address,
+              },
+              netherlandsAddress: {
+                ...initialCompanyInfo.netherlandsAddress,
+                ...data.company.netherlandsAddress,
+              },
+              compliance: {
+                ...initialCompanyInfo.compliance,
+                ...data.company.compliance,
+              },
+            });
           }
         }
       } catch (e) {
@@ -250,6 +273,62 @@ export default function AdminCompanyPage() {
                   onChange={(e) => setFormData({ ...formData, whatsappMessage: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:border-navy-900 focus:outline-none"
                 />
+              </div>
+
+              <div className="sm:col-span-2 pt-2 border-t border-slate-100">
+                <p className="font-bold text-navy-950 mb-3">Marketing Head</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
+                    <label className="block font-semibold text-slate-700 mb-1">Name</label>
+                    <input
+                      type="text"
+                      value={formData.marketingHead?.name || ""}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          marketingHead: { ...formData.marketingHead, name: e.target.value },
+                        })
+                      }
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:border-navy-900 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-semibold text-slate-700 mb-1">Designation</label>
+                    <input
+                      type="text"
+                      value={formData.marketingHead?.designation || ""}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          marketingHead: { ...formData.marketingHead, designation: e.target.value },
+                        })
+                      }
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:border-navy-900 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-semibold text-slate-700 mb-1">Phone</label>
+                    <input
+                      type="text"
+                      value={formData.marketingHead?.displayPhone || ""}
+                      onChange={(e) => {
+                        const displayPhone = e.target.value;
+                        const digits = displayPhone.replace(/[^\d]/g, "");
+                        setFormData({
+                          ...formData,
+                          marketingHead: {
+                            ...formData.marketingHead,
+                            displayPhone,
+                            phone: displayPhone.startsWith("+") ? `+${digits}` : `+${digits}`,
+                            whatsappNumber: digits,
+                          },
+                        });
+                      }}
+                      placeholder="+91 8800883467"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:border-navy-900 focus:outline-none"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

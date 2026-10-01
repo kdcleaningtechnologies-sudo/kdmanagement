@@ -114,6 +114,29 @@ export default function ContactPage() {
                       </div>
                     </div>
 
+                    {/* Marketing Head */}
+                    <div className="flex items-start gap-3 pt-1 border-t border-slate-200">
+                      <Phone className="w-4 h-4 text-brandcyan-600 flex-shrink-0 mt-0.5" />
+                      <div className="space-y-1">
+                        <span className="text-slate-500 text-xs block">{companyInfo.marketingHead.designation}</span>
+                        <strong className="text-navy-900 block">{companyInfo.marketingHead.name}</strong>
+                        <a
+                          href={`tel:${companyInfo.marketingHead.phone}`}
+                          className="font-bold text-navy-950 hover:text-brandblue-600 transition-colors"
+                        >
+                          {companyInfo.marketingHead.displayPhone}
+                        </a>
+                        <a
+                          href={`https://wa.me/${companyInfo.marketingHead.whatsappNumber}?text=${encodeURIComponent(`Hello ${companyInfo.marketingHead.name}, I would like to discuss facility management services for our property.`)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#25D366] hover:underline flex items-center gap-1 font-semibold"
+                        >
+                          WhatsApp {companyInfo.marketingHead.designation} <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    </div>
+
                     {/* Official Email */}
                     <div className="flex items-start gap-3">
                       <Mail className="w-4 h-4 text-brandcyan-600 flex-shrink-0 mt-0.5" />

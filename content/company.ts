@@ -44,6 +44,13 @@ export interface CompanyInfo {
     instagram: string;
     linkedin: string;
   };
+  marketingHead: {
+    name: string;
+    designation: string;
+    phone: string;
+    displayPhone: string;
+    whatsappNumber: string;
+  };
 }
 
 export const companyInfo: CompanyInfo = {
@@ -97,6 +104,13 @@ export const companyInfo: CompanyInfo = {
     facebook: "https://www.facebook.com/profile.php?id=61594423779329",
     instagram: "https://www.instagram.com/kdfacilitiesmanagementservices/",
     linkedin: "https://www.linkedin.com/in/kd-facilities-management-services-b6586b438/",
+  },
+  marketingHead: {
+    name: "Mr. Vinod Singh",
+    designation: "Marketing Head",
+    phone: "+918800883467",
+    displayPhone: "+91 8800883467",
+    whatsappNumber: "918800883467",
   },
 };
 
