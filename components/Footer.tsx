@@ -298,9 +298,6 @@ export const Footer: React.FC = () => {
                   <a href={`tel:${companyInfo.phone}`} className="hover:text-brandcyan-300 transition-colors block font-medium">
                     {companyInfo.phoneIndia}
                   </a>
-                  <a href="tel:+31621712992" className="hover:text-brandcyan-300 transition-colors block font-medium text-slate-400">
-                    {companyInfo.phoneNetherlands}
-                  </a>
                   <a
                     href={`tel:${companyInfo.marketingHead.phone}`}
                     className="hover:text-brandcyan-300 transition-colors block font-medium pt-1"

@@ -3,7 +3,7 @@ export interface ClientItem {
   name: string;
   shortName: string;
   industry: string;
-  category: "Healthcare" | "Pharma & Industrial" | "Corporate & Telecom" | "Commercial & Luxury";
+  category: "Healthcare" | "Pharma & Industrial" | "Corporate & Telecom" | "Commercial & Luxury" | "Sports & Hospitality";
   location: string;
   scope: string;
   tagline: string;
@@ -59,5 +59,15 @@ export const clientsData: ClientItem[] = [
     location: "Gurgaon, Haryana",
     scope: "Premium Architectural Housekeeping, Deep Mechanized Cleaning & Facility Upkeep",
     tagline: "High-End Corporate & Architecture Spaces",
+  },
+  {
+    id: "sudeva-football-club",
+    name: "Sudeva Football Club",
+    shortName: "Sudeva FC",
+    industry: "Professional Football & Sports Academy",
+    category: "Sports & Hospitality",
+    location: "New Delhi",
+    scope: "Stadium Housekeeping, Match-Day Facility Operations, Academy Campus Hygiene & Security",
+    tagline: "Delhi's Premier Professional Football Club",
   },
 ];

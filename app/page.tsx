@@ -314,7 +314,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. FLOATING 4-PILLAR OPERATIONS BAR MATCHING ATTACHMENT */}
-      <section className="relative -mt-8 sm:-mt-12 z-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative -mt-8 sm:-mt-12 z-20 px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
         <div className="max-w-7xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl border border-slate-200/90 p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
             {/* Pillar 1: People */}
@@ -372,8 +372,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CLIENT SHOWCASE: OZONE PHARMA, AVISA HOSPITAL, SARVODAYA HOSPITAL, TRANSCOMM, ESSENTIA */}
-      <ClientsShowcase theme="light" />
+      {/* CLIENT SHOWCASE: OZONE PHARMA, AVISS HOSPITAL, SARVODAYA, TRANSCOMM, ESSENTIA, SUDEVA FC */}
+      <ClientsShowcase className="mt-2" />
 
       {/* 3. OUR SERVICES SECTION MATCHING ATTACHMENT */}
       <section id="services" className="py-16 sm:py-24 bg-white">

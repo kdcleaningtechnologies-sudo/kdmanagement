@@ -52,7 +52,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Featured Client Engagements */}
-      <ClientsShowcase theme="light" />
+      <ClientsShowcase />
 
       {/* Case Studies Grid */}
       <section className="py-14 sm:py-20">

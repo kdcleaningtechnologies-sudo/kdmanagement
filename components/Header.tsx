@@ -135,15 +135,6 @@ export const Header: React.FC = () => {
               <Phone className="w-3 h-3 text-brandcyan-400" />
               <span>{companyInfo.phoneIndia}</span>
             </a>
-            <span className="text-slate-600">|</span>
-            <a
-              href="tel:+31621712992"
-              className="flex items-center gap-1 text-slate-300 font-medium hover:text-brandcyan-300 transition-colors"
-              title="Call Netherlands Office"
-            >
-              <Phone className="w-3 h-3 text-brandcyan-400" />
-              <span>{companyInfo.phoneNetherlands}</span>
-            </a>
             <span className="text-slate-600 hidden lg:inline">|</span>
             <a
               href={`tel:${companyInfo.marketingHead.phone}`}

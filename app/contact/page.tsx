@@ -113,15 +113,9 @@ export default function ContactPage() {
                       <Phone className="w-4 h-4 text-brandcyan-600 flex-shrink-0 mt-0.5" />
                       <div className="space-y-1">
                         <span className="text-slate-500 text-xs block">Operations & Support Desks</span>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                          <a href={`tel:${companyInfo.phone}`} className="font-bold text-navy-950 hover:text-brandblue-600 transition-colors">
-                            {companyInfo.phoneIndia}
-                          </a>
-                          <span className="hidden sm:inline text-slate-400">|</span>
-                          <a href="tel:+31621712992" className="font-bold text-navy-950 hover:text-brandblue-600 transition-colors">
-                            {companyInfo.phoneNetherlands}
-                          </a>
-                        </div>
+                        <a href={`tel:${companyInfo.phone}`} className="font-bold text-navy-950 hover:text-brandblue-600 transition-colors">
+                          {companyInfo.phoneIndia}
+                        </a>
                       </div>
                     </div>
 

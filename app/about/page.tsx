@@ -170,7 +170,7 @@ export default function AboutPage() {
       </section>
 
       {/* Esteemed Clients */}
-      <ClientsShowcase theme="light" />
+      <ClientsShowcase />
 
       {/* Corporate Empanelment & Procurement Section */}
       <section id="compliance" className="py-14 sm:py-20 bg-slate-50 border-y border-slate-200">

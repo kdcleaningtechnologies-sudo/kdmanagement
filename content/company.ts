@@ -9,7 +9,6 @@ export interface CompanyInfo {
   phone: string;
   displayPhone: string;
   phoneIndia: string;
-  phoneNetherlands: string;
   email: string;
   salesEmail: string;
   supportEmail: string;
@@ -72,7 +71,6 @@ export const companyInfo: CompanyInfo = {
   phone: "+918796682266",
   displayPhone: "+91 8796682266 (India)",
   phoneIndia: "+91 8796682266 (India)",
-  phoneNetherlands: "+31 6 21712992 (Netherlands)",
   email: "kdfacilitiesmanagementservices@gmail.com",
   salesEmail: "kdfacilitiesmanagementservices@gmail.com",
   supportEmail: "kdfacilitiesmanagementservices@gmail.com",

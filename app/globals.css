@@ -151,6 +151,29 @@ body {
   animation: float-drone 3.5s ease-in-out infinite;
 }
 
+@keyframes client-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-client-marquee {
+  animation: client-marquee 32s linear infinite;
+}
+
+.animate-client-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-client-marquee {
+    animation: none;
+  }
+}
+
 .bg-telemetry-grid {
   background-size: 24px 24px;
   background-image: 

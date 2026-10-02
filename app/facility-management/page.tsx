@@ -275,7 +275,7 @@ export default function FacilityManagementPage() {
         </section>
 
         {/* Clients Showcase */}
-        <ClientsShowcase theme="light" />
+        <ClientsShowcase />
 
         {/* Tier Comparison Table Section */}
         <section id="packages" className="py-14 sm:py-20 bg-white">
