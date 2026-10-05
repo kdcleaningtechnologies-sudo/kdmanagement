@@ -51,7 +51,7 @@ const cleaningFaqs = [
 export default function CleaningServicesPage() {
   const breadcrumbs = [
     { name: "Home", url: "/" },
-    { name: "Services", url: "/facility-management" },
+    { name: "Services", url: "/services" },
     { name: "Corporate Housekeeping & Soft Services", url: "/services/cleaning" },
   ];
 
@@ -82,7 +82,7 @@ export default function CleaningServicesPage() {
                 <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
               </li>
               <li>
-                <Link href="/facility-management" className="hover:text-brandblue-600 transition-colors">
+                <Link href="/services" className="hover:text-brandblue-600 transition-colors">
                   Services
                 </Link>
               </li>

@@ -130,7 +130,7 @@ const industriesServed = [
 export default function PestControlServicesPage() {
   const breadcrumbs = [
     { name: "Home", url: "/" },
-    { name: "Services", url: "/facility-management" },
+    { name: "Services", url: "/services" },
     { name: "Pest Control Services", url: "/services/pest-control" },
   ];
 
@@ -160,7 +160,7 @@ export default function PestControlServicesPage() {
                 <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
               </li>
               <li>
-                <Link href="/facility-management" className="hover:text-brandblue-600 transition-colors">
+                <Link href="/services" className="hover:text-brandblue-600 transition-colors">
                   Services
                 </Link>
               </li>
