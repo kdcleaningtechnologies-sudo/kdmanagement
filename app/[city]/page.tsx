@@ -19,6 +19,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatCounter } from "@/components/StatCounter";
 import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, defaultOgImage } from "@/lib/seo";
 
 interface CityPageProps {
   params: {
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   const city = citiesData[params.city.toLowerCase()];
   if (!city) return {};
 
-  const pageUrl = `https://www.kdfmservices.com/${city.slug}`;
+  const pageUrl = `${SITE_URL}/${city.slug}`;
 
   return {
     title: city.seoTitle,
@@ -51,6 +52,13 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
       url: pageUrl,
       type: "website",
       locale: "en_IN",
+      images: [defaultOgImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: city.seoTitle,
+      description: city.seoDescription,
+      images: [defaultOgImage.url],
     },
   };
 }
@@ -240,7 +248,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
               subtitle={`From hospital-grade housekeeping to 24/7 security guarding and hard MEP engineering across ${city.name}.`}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {servicesData.map((category) => (
                 <ServiceCard key={category.id} category={category} />
               ))}

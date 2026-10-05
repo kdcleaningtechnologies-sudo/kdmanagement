@@ -7,16 +7,14 @@ import { companyInfo } from "@/content/company";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, socialMetadata } from "@/lib/seo";
 
 const specialisedCategory = servicesData.find((s) => s.id === "specialised-services")!;
 
 export const metadata: Metadata = {
-  title: "Specialised Cleaning & Drone Façade Washing in Gurgaon | KD",
+  title: "Specialised Cleaning & Drone Façade Washing in Gurgaon",
   description:
     "Autonomous drone façade cleaning, Italian marble floor crystallization, integrated pest management, and IAQ disinfection across Gurgaon, Noida, and Delhi NCR.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/services/specialised",
-  },
   keywords: [
     "Specialised Cleaning Services Gurgaon",
     "Drone Facade Cleaning Gurgaon",
@@ -25,13 +23,10 @@ export const metadata: Metadata = {
     "Pest Control Services Gurgaon",
     "Commercial Disinfection Services Delhi NCR",
   ],
-  openGraph: {
-    title: "Specialised Cleaning & Drone Façade Washing in Gurgaon | KD",
+  ...socialMetadata("/services/specialised", {
+    title: "Specialised Cleaning & Drone Façade Washing in Gurgaon | KD Facilities Management Services",
     description: "High-tech façade cleaning drones, diamond marble polishing, and commercial pest management.",
-    url: "https://www.kdfmservices.com/services/specialised",
-    type: "website",
-    locale: "en_IN",
-  },
+  }),
 };
 
 const specialisedFaqs = [
@@ -49,7 +44,7 @@ const specialisedFaqs = [
   },
   {
     question: "Is your pest management safe for food and cafeteria zones?",
-    answer: "Yes, our Integrated Pest Management (IPM) utilizes Bayer/Syngenta food-grade gel baits and odorless micro-encapsulated sprays fully compliant with HACCP and FSSAI standards."
+    answer: "Yes. Commercial pest control is a dedicated specialised module with its own AMC. We use Bayer/Syngenta food-grade gel baits and odorless micro-encapsulated sprays aligned with HACCP and FSSAI. See our Pest Control Services page for full scope.",
   }
 ];
 
@@ -64,7 +59,7 @@ export default function SpecialisedServicesPage() {
     name: "Specialised Facility Services & Autonomous Drone Façade Washing",
     serviceType: "Specialized High-Rise Exterior & Floor Restoration Services",
     description: specialisedCategory.description,
-    url: "https://www.kdfmservices.com/services/specialised",
+    url: `${SITE_URL}/services/specialised`,
   };
 
   return (
@@ -208,6 +203,31 @@ export default function SpecialisedServicesPage() {
                   </div>
                 </div>
               ))}
+
+              <div
+                id="integrated-pest-management"
+                className="p-6 sm:p-8 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-all scroll-mt-24"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <span className="text-xs font-semibold text-brandblue-600 block mb-1">
+                      Specialised Module
+                    </span>
+                    <h2 className="text-xl font-bold font-heading text-navy-950 mb-2">
+                      Commercial Pest Control & IPM
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
+                      Rodent, termite, mosquito, bed bug, bird deterrent, fumigation, and disinfection programmes now have a dedicated service page with full AMC scope for Gurugram and Delhi NCR.
+                    </p>
+                  </div>
+                  <Link
+                    href="/services/pest-control"
+                    className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl btn-brand-primary font-bold text-xs shadow-md hover:shadow-lg transition-all whitespace-nowrap"
+                  >
+                    View Pest Control Services <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>

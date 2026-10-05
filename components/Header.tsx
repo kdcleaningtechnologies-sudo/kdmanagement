@@ -13,6 +13,7 @@ import {
   Wrench,
   Rocket,
   Building2,
+  Bug,
   CheckCircle2,
   ExternalLink,
   Search,
@@ -81,6 +82,8 @@ export const Header: React.FC = () => {
         return <Wrench className="w-4 h-4 text-brandgreen-600" />;
       case "specialised-services":
         return <Rocket className="w-4 h-4 text-brandgreen-600" />;
+      case "pest-control-services":
+        return <Bug className="w-4 h-4 text-brandgreen-600" />;
       default:
         return <Building2 className="w-4 h-4 text-brandgreen-600" />;
     }
@@ -200,9 +203,9 @@ export const Header: React.FC = () => {
               {servicesDropdownOpen && (
                 <div
                   onMouseLeave={() => setServicesDropdownOpen(false)}
-                  className="absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 z-50 animate-fade-in"
+                  className="absolute left-1/2 -translate-x-1/2 mt-2 w-[1080px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 z-50 animate-fade-in"
                 >
-                  <div className="grid grid-cols-4 gap-6">
+                  <div className="grid grid-cols-5 gap-5">
                     {servicesData.map((category) => (
                       <div key={category.id} className="space-y-3">
                         <Link
@@ -223,7 +226,7 @@ export const Header: React.FC = () => {
                         </Link>
 
                         <ul className="space-y-1.5">
-                          {category.subServices.map((sub) => (
+                          {category.subServices.slice(0, 5).map((sub) => (
                             <li key={sub.id}>
                               <Link
                                 href={`/services/${category.slug}#${sub.slug}`}
@@ -233,6 +236,16 @@ export const Header: React.FC = () => {
                               </Link>
                             </li>
                           ))}
+                          {category.subServices.length > 5 && (
+                            <li>
+                              <Link
+                                href={`/services/${category.slug}`}
+                                className="text-[11px] font-semibold text-brandblue-600 hover:text-brandblue-700 block leading-snug py-0.5"
+                              >
+                                View all {category.subServices.length} modules →
+                              </Link>
+                            </li>
+                          )}
                         </ul>
                       </div>
                     ))}

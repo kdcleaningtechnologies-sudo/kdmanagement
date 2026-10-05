@@ -6,16 +6,14 @@ import { servicesData } from "@/content/services";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, socialMetadata } from "@/lib/seo";
 
 const technicalCategory = servicesData.find((s) => s.id === "technical-services")!;
 
 export const metadata: Metadata = {
-  title: "Engineering & Technical MEP Services in Gurgaon & NCR | KD Facilities Management Services",
+  title: "Engineering & Technical MEP Services in Gurgaon & NCR",
   description:
     "Hard FM, HVAC chiller plant operations, HT/LT substation maintenance, DG backup, and STP/WTP operations across Gurgaon, Manesar, Noida, and Delhi NCR.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/services/technical",
-  },
   keywords: [
     "Technical Services Gurgaon",
     "Technical Facility Services",
@@ -25,13 +23,10 @@ export const metadata: Metadata = {
     "STP WTP Operations Gurgaon",
     "Commercial MEP Maintenance Delhi NCR",
   ],
-  openGraph: {
+  ...socialMetadata("/services/technical", {
     title: "Engineering & Technical MEP Services in Gurgaon & NCR | KD Facilities Management Services",
     description: "Planned preventive maintenance (PPM) for commercial HVAC, 11kV electrical substations, and automated DG backups.",
-    url: "https://www.kdfmservices.com/services/technical",
-    type: "website",
-    locale: "en_IN",
-  },
+  }),
 };
 
 const technicalFaqs = [
@@ -64,7 +59,7 @@ export default function TechnicalServicesPage() {
     name: "Hard Services & Technical MEP Maintenance",
     serviceType: "Commercial Building Electro-Mechanical Maintenance",
     description: technicalCategory.description,
-    url: "https://www.kdfmservices.com/services/technical",
+    url: `${SITE_URL}/services/technical`,
   };
 
   return (

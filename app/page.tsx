@@ -11,6 +11,7 @@ import {
   Home,
   Plane,
   Wrench,
+  Bug,
   ArrowRight,
   Droplets,
   QrCode,
@@ -23,7 +24,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
 import { ClientsShowcase } from "@/components/ClientsShowcase";
 
-// 7 Service Cards matching attachment
+// Homepage service directory cards
 const SERVICES_CARDS = [
   {
     id: "integrated-facility-management",
@@ -80,6 +81,14 @@ const SERVICES_CARDS = [
     icon: Wrench,
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80",
     alt: "MEP electrical engineering maintenance technician with helmet inspecting panel",
+  },
+  {
+    id: "pest-control",
+    title: "Pest Control",
+    href: "/services/pest-control",
+    icon: Bug,
+    image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80",
+    alt: "Commercial kitchen and facility hygiene environment for pest control services",
   },
 ];
 
@@ -390,7 +399,7 @@ export default function HomePage() {
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 max-w-xl">
               <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                From housekeeping and cleaning to security, maintenance and technology-enabled operations, we provide end-to-end facility management services under one trusted partner.
+                From housekeeping and pest control to security, maintenance and technology-enabled operations, we provide end-to-end facility management services under one trusted partner.
               </p>
               <Link
                 href="/services"
@@ -402,8 +411,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* 7 Services Grid matching attachment */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 pt-10">
+          {/* Services Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4 pt-10">
             {SERVICES_CARDS.map((srv) => {
               const Icon = srv.icon;
               return (

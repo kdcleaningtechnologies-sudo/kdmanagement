@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Sparkles, Shield, Wrench, Rocket, Check, ShieldCheck } from "lucide-react";
+import { Sparkles, Shield, Wrench, Rocket, Bug, Check, ShieldCheck } from "lucide-react";
 import { ServiceCategory } from "@/content/services";
 
 interface ServiceCardProps {
@@ -17,6 +17,8 @@ const getCategoryIcon = (id: string) => {
       return <Wrench className="w-5 h-5 text-brandgreen-600" />;
     case "specialised-services":
       return <Rocket className="w-5 h-5 text-brandgreen-600" />;
+    case "pest-control-services":
+      return <Bug className="w-5 h-5 text-brandgreen-600" />;
     default:
       return <Sparkles className="w-5 h-5 text-brandgreen-600" />;
   }

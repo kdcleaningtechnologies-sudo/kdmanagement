@@ -12,14 +12,12 @@ import { sustainabilityData } from "@/content/sustainability";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Sustainability & ESG Facility Operations | KD Facilities Management Services",
+  title: "Sustainability & ESG Facility Operations",
   description:
     "Eco-friendly facility management supporting corporate ESG & BRSR reporting. Zero-runoff pure water systems, Diversey green chemicals, and waste segregation across Gurgaon, Noida, and Delhi NCR.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/sustainability",
-  },
   keywords: [
     "Green Facility Management Gurgaon",
     "ESG Facility Management Delhi NCR",
@@ -27,6 +25,11 @@ export const metadata: Metadata = {
     "Waste Segregation Management Gurgaon",
     "LEED IGBC Building Cleaning Compliance",
   ],
+  ...socialMetadata("/sustainability", {
+    title: "Sustainability & ESG Facility Operations | KD Facilities Management Services",
+    description:
+      "Eco-friendly facility management supporting corporate ESG & BRSR reporting. Zero-runoff pure water systems, Diversey green chemicals, and waste segregation across Gurgaon, Noida, and Delhi NCR.",
+  }),
 };
 
 const getPillarIcon = (iconName: string) => {

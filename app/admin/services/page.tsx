@@ -6,6 +6,7 @@ import {
   Shield,
   Wrench,
   Rocket,
+  Bug,
   Save,
   CheckCircle2,
   Plus,
@@ -118,6 +119,8 @@ export default function AdminServicesPage() {
         return <Wrench className="w-4 h-4" />;
       case "specialised-services":
         return <Rocket className="w-4 h-4" />;
+      case "pest-control-services":
+        return <Bug className="w-4 h-4" />;
       default:
         return <Sparkles className="w-4 h-4" />;
     }
@@ -127,7 +130,7 @@ export default function AdminServicesPage() {
     <div className="pb-20">
       <AdminHeader
         title="Services & Operational Scope"
-        subtitle="Manage the 4 core facility divisions, sub-services, scope, benefits, and SLAs."
+        subtitle="Manage the 5 core facility divisions, sub-services, scope, benefits, and SLAs."
         actions={
           <div className="flex items-center gap-2">
             <button

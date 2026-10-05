@@ -15,6 +15,7 @@ import {
 import { insightsArticles, InsightArticle } from "@/content/insights";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, absoluteUrl } from "@/lib/seo";
 
 interface ArticlePageProps {
   params: {
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const article = insightsArticles.find((a) => a.slug === params.slug);
   if (!article) return {};
 
-  const pageUrl = `https://www.kdfmservices.com/insights/${article.slug}`;
+  const pageUrl = absoluteUrl(`/insights/${article.slug}`);
 
   return {
     title: article.seoTitle,
@@ -77,7 +78,7 @@ export default function ArticleDetailPage({ params }: ArticlePageProps) {
     notFound();
   }
 
-  const pageUrl = `https://www.kdfmservices.com/insights/${article.slug}`;
+  const pageUrl = absoluteUrl(`/insights/${article.slug}`);
 
   const breadcrumbs = [
     { name: "Home", url: "/" },
@@ -97,7 +98,7 @@ export default function ArticleDetailPage({ params }: ArticlePageProps) {
           datePublished: article.publishedDate,
           dateModified: article.modifiedDate,
           authorName: article.author,
-          image: `https://www.kdfmservices.com${article.featuredImage}`,
+          image: `${SITE_URL}${article.featuredImage}`,
         }}
       />
 

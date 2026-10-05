@@ -6,16 +6,14 @@ import { servicesData } from "@/content/services";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, socialMetadata } from "@/lib/seo";
 
 const softCategory = servicesData.find((s) => s.id === "soft-services")!;
 
 export const metadata: Metadata = {
-  title: "Cleaning & Housekeeping Services in Gurgaon & NCR | KD Facilities Management Services",
+  title: "Cleaning & Housekeeping Services in Gurgaon & NCR",
   description:
     "Professional corporate housekeeping, commercial deep cleaning, cafeteria stewardship, and facade washing across Gurgaon & Delhi NCR. Eco-friendly chemicals & verified staff.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/services/cleaning",
-  },
   keywords: [
     "Housekeeping Services Gurgaon",
     "Corporate Cleaning Services Gurgaon",
@@ -25,13 +23,10 @@ export const metadata: Metadata = {
     "Facade Cleaning Services Gurgaon",
     "Industrial Cleaning Services NCR",
   ],
-  openGraph: {
+  ...socialMetadata("/services/cleaning", {
     title: "Cleaning & Housekeeping Services in Gurgaon & NCR | KD Facilities Management Services",
     description: "Professional corporate housekeeping, commercial deep cleaning, and mechanized janitorial services for Grade-A properties.",
-    url: "https://www.kdfmservices.com/services/cleaning",
-    type: "website",
-    locale: "en_IN",
-  },
+  }),
 };
 
 const cleaningFaqs = [
@@ -64,7 +59,7 @@ export default function CleaningServicesPage() {
     name: "Corporate Housekeeping & Cleaning Services",
     serviceType: "Commercial Cleaning and Janitorial Services",
     description: softCategory.description,
-    url: "https://www.kdfmservices.com/services/cleaning",
+    url: `${SITE_URL}/services/cleaning`,
   };
 
   return (

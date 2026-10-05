@@ -251,13 +251,153 @@ export const servicesData: ServiceCategory[] = [
     ],
   },
   {
+    id: "pest-control-services",
+    slug: "pest-control",
+    title: "Pest Control Services",
+    menuTitle: "Pest Control Services",
+    badge: "Integrated Pest Management",
+    headline: "Commercial Pest Control Services in Gurugram & Delhi NCR",
+    description:
+      "Pest control as part of KD Facilities Management Services' integrated specialised offering. Scientific IPM programmes for corporate offices, retail, residential societies, hospitals, hospitality, F&B, warehouses, and industrial facilities across Gurugram and Delhi NCR.",
+    subServices: [
+      {
+        id: "general-pest-control",
+        slug: "general-pest-control",
+        title: "General Pest Control",
+        shortDescription: "Scheduled cockroach, ant, and crawling-insect treatment using odorless gel baits and residual sprays.",
+        whatItIs:
+          "Routine interior and perimeter pest suppression targeting cockroaches, ants, silverfish, and spiders with WHO-aligned, low-odor formulations that do not interrupt occupancy.",
+        whoItsFor: "Corporate offices, retail floors, pantries, hospitals, and occupied residential towers.",
+        benefits: [
+          "Gel baiting in cracks, drains, and electrical voids with zero downtime",
+          "Odorless residual treatments safe around staff, patients, and residents",
+          "Trend logs of sightings for HACCP, ISO, and facility audit files"
+        ],
+        slaNote: "Free repeat call-out within 24 hours if activity reappears between scheduled cycles.",
+        iconName: "Bug",
+      },
+      {
+        id: "rodent-control",
+        slug: "rodent-control",
+        title: "Rodent Control",
+        shortDescription: "Tamper-proof bait stations, glue boards, and proofing to stop rats and mice at the perimeter.",
+        whatItIs:
+          "Integrated rodent exclusion combining external bait stations, internal monitoring boards, drain sealing, and proofing of cable and pipe penetrations.",
+        whoItsFor: "Warehouses, F&B kitchens, industrial plants, hospitals, and large residential campuses.",
+        benefits: [
+          "Locked, tamper-proof perimeter bait stations mapped on a site plan",
+          "Proofing of gaps, drains, and service shafts to block re-entry",
+          "Weekly or fortnightly inspection cards for food-safety audits"
+        ],
+        slaNote: "Critical sightings attended the same business day from our Gurugram dispatch hub.",
+        iconName: "Rat",
+      },
+      {
+        id: "mosquito-fly-control",
+        slug: "mosquito-fly-control",
+        title: "Mosquito & Fly Control",
+        shortDescription: "Larviciding, misting, and fly-trap programmes for outdoor compounds and food-handling zones.",
+        whatItIs:
+          "Source reduction plus adulticiding: stagnant-water treatment, ULV misting, and commercial fly units for kitchens, loading docks, and landscaped campuses.",
+        whoItsFor: "Hospitals, hotels, gated societies, F&B, and corporate campuses with outdoor landscaping.",
+        benefits: [
+          "Larvicide cycles on tanks, drains, and landscape water bodies",
+          "Scheduled dusk misting without staining façades or vehicles",
+          "Kitchen fly control aligned with FSSAI hygiene expectations"
+        ],
+        slaNote: "Monsoon intensification visits included on AMC sites across Gurugram and NCR.",
+        iconName: "Wind",
+      },
+      {
+        id: "termite-control",
+        slug: "termite-control",
+        title: "Termite Control",
+        shortDescription: "Pre- and post-construction termite barriers, drilling, and chemical soil treatment.",
+        whatItIs:
+          "Wood-destroying insect programmes covering pre-construction soil treatment, post-construction drilling along skirting, and timber inspection for subterranean termites.",
+        whoItsFor: "Offices, hotels, warehouses, industrial sheds, and residential societies with timber joinery.",
+        benefits: [
+          "Government-approved termiticides applied to labelled dilution rates",
+          "Mapped drilling and injection points for warranty documentation",
+          "Follow-up inspections during the AMC warranty window"
+        ],
+        slaNote: "Written treatment certificate issued after every post-construction job.",
+        iconName: "TreePine",
+      },
+      {
+        id: "bed-bug-treatment",
+        slug: "bed-bug-treatment",
+        title: "Bed Bug Treatment",
+        shortDescription: "Heat-assist and residual protocols for hostels, hotels, hospitals, and staff accommodation.",
+        whatItIs:
+          "Inspection-led bed bug knockdown using targeted residual sprays, mattress encasements, and follow-up visits until activity is cleared.",
+        whoItsFor: "Hotels, hospitals, hostels, staff housing, and residential apartments.",
+        benefits: [
+          "Room-by-room inspection before chemicals are applied",
+          "Discreet scheduling that protects guest and patient operations",
+          "Mandatory follow-up visit to confirm eradication"
+        ],
+        slaNote: "Second visit included in the treatment package when live activity is found.",
+        iconName: "BedDouble",
+      },
+      {
+        id: "bird-control",
+        slug: "bird-control",
+        title: "Bird Control & Deterrent Systems",
+        shortDescription: "Spikes, netting, and humane deterrents for ledges, courtyards, and loading bays.",
+        whatItIs:
+          "Humane bird-proofing with stainless spikes, UV-stable netting, and visual deterrents to stop roosting, droppings, and associated mite issues on commercial buildings.",
+        whoItsFor: "Corporate towers, malls, warehouses, hospitals, and residential podium terraces.",
+        benefits: [
+          "Site survey before netting or spike specification",
+          "Food-safe, non-lethal methods suitable for occupied campuses",
+          "Dropping clean-down can be bundled with façade or housekeeping crews"
+        ],
+        slaNote: "Workmanship warranty on installed netting and spike systems as specified in the AMC.",
+        iconName: "Bird",
+      },
+      {
+        id: "fumigation-services",
+        slug: "fumigation-services",
+        title: "Fumigation Services",
+        shortDescription: "Space fumigation and fogging for warehouses, stores, and sealed commercial volumes.",
+        whatItIs:
+          "Controlled fumigation and thermal/ULV fogging for stored-product pests in warehouses, archives, and sealed rooms, with re-entry protocols and documentation.",
+        whoItsFor: "Warehouses, F&B stores, pharma logistics, archives, and industrial stores.",
+        benefits: [
+          "Pre-job isolation plan so operations know exact downtime",
+          "Approved fumigants handled only by certified technicians",
+          "Clearance and re-entry advice recorded on the job sheet"
+        ],
+        slaNote: "Advance scheduling so warehouse dispatch windows are not disrupted.",
+        iconName: "CloudFog",
+      },
+      {
+        id: "disinfection-sanitization",
+        slug: "disinfection-sanitization",
+        title: "Disinfection & Sanitization",
+        shortDescription: "ULV fogging and high-touch surface disinfection for offices, hospitals, and campuses.",
+        whatItIs:
+          "Hospital-grade surface disinfection and ULV sanitization of high-touch zones, washrooms, pantries, and common areas—bundled with pest AMC or run as a standalone hygiene programme.",
+        whoItsFor: "Corporate offices, hospitals, schools, hotels, and residential clubhouses.",
+        benefits: [
+          "Non-staining, rapid-dry mists suitable for occupied floors",
+          "Focus on handles, lifts, washrooms, and food-contact adjacent surfaces",
+          "Can sit on the same SLA as housekeeping and pest AMC"
+        ],
+        slaNote: "Treated areas typically ready for re-entry within 45 minutes of ULV misting.",
+        iconName: "Sparkles",
+      },
+    ],
+  },
+  {
     id: "specialised-services",
     slug: "specialised",
     title: "Specialised Facility Services",
     menuTitle: "Specialised Services",
     badge: "Advanced Technical Solutions",
     headline: "High-Margin Specialized Treatments & Restorative Care",
-    description: "Cutting-edge robotic façade drones, marble restoration, integrated pest management, and post-construction handover solutions delivered by our specialized equipment fleet.",
+    description: "Cutting-edge robotic façade drones, marble restoration, and post-construction handover solutions—with commercial pest control delivered as a dedicated specialised module.",
     subServices: [
       {
         id: "drone-facade-cleaning",
@@ -288,21 +428,6 @@ export const servicesData: ServiceCategory[] = [
         ],
         slaNote: "Guaranteed 85+ gloss-meter reflection unit outcome on treated Italian marble.",
         iconName: "Sparkle",
-      },
-      {
-        id: "integrated-pest-management",
-        slug: "integrated-pest-management",
-        title: "Commercial Integrated Pest Management (IPM)",
-        shortDescription: "Odorless gel baiting, rodent glue traps, termite barriers, and herbal mist fogging.",
-        whatItIs: "Scientific pest eradication targeting roaches, rodents, termites, mosquitoes, and flies using WHO-recommended, food-safe chemicals with zero downtime.",
-        whoItsFor: "Hospitality kitchens, pharmaceutical warehouses, office pantries, and residential societies.",
-        benefits: [
-          "Odorless Bayer / Syngenta formulations safe for pregnant employees and pets",
-          "Tamper-proof external perimeter rodent bait stations",
-          "Detailed pest activity heat-maps and trend reports for HACCP/ISO audits"
-        ],
-        slaNote: "Free repeat touch-up callouts within 24 hours if pest sighting reoccurs between cycles.",
-        iconName: "Bug",
       },
       {
         id: "disinfection-indoor-air",

@@ -15,14 +15,12 @@ import {
 import { insightsArticles } from "@/content/insights";
 import { SectionHeading } from "@/components/SectionHeading";
 import { JsonLd } from "@/components/JsonLd";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Facility Management Insights & B2B Knowledge Hub | KD Facilities Management Services",
+  title: "Facility Management Insights & B2B Knowledge Hub",
   description:
     "Expert articles on Integrated Facility Management (IFM), PASARA security compliance, corporate housekeeping SLAs, and MEP maintenance for commercial properties in Gurgaon and Delhi NCR.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/insights",
-  },
   keywords: [
     "Facility Management Insights",
     "Corporate IFM Guide Delhi NCR",
@@ -31,14 +29,11 @@ export const metadata: Metadata = {
     "Commercial MEP Maintenance Checklist",
     "Drone Facade Cleaning India",
   ],
-  openGraph: {
+  ...socialMetadata("/insights", {
     title: "Facility Management Insights & Knowledge Hub | KD Facilities Management Services",
     description:
       "Expert operational guides, SLA benchmarks, and compliance checklists for corporate facility directors and administration heads in Delhi NCR.",
-    url: "https://www.kdfmservices.com/insights",
-    type: "website",
-    locale: "en_IN",
-  },
+  }),
 };
 
 const getCategoryIcon = (category: string) => {

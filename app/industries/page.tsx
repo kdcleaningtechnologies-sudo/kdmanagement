@@ -18,14 +18,12 @@ import {
 import { industriesData } from "@/content/industries";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Industry Solutions | Facility Management in Gurgaon & Delhi NCR",
   description:
     "Specialized facility management solutions for Corporate Offices, Hospitals, Hotels, Industrial Plants, Malls, Schools, Residential Societies, and Commercial Buildings across Gurugram, Manesar, Noida, and Delhi NCR.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/industries",
-  },
   keywords: [
     "Corporate Cleaning Services Gurgaon",
     "Hospital Housekeeping Services Gurgaon",
@@ -33,6 +31,11 @@ export const metadata: Metadata = {
     "Residential Facility Management Gurgaon",
     "Commercial Facility Management Delhi NCR",
   ],
+  ...socialMetadata("/industries", {
+    title: "Industry Facility Management Solutions | Gurgaon & Delhi NCR",
+    description:
+      "Specialized facility management for corporate offices, hospitals, hotels, industrial plants, malls, and residential societies across Delhi NCR.",
+  }),
 };
 
 const getIndustryIcon = (iconName: string) => {

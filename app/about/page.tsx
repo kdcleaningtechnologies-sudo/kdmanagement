@@ -12,21 +12,25 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 import { ClientsShowcase } from "@/components/ClientsShowcase";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About Us | Integrated Facility Management Company in Gurgaon",
+  title: "About Us — IFM Company in Gurgaon & Delhi",
   description:
     "Learn about KD Facilities Management Services, our leadership, PASARA & statutory compliance, and our specialized technology arm KD Cleaning Technologies across Gurugram, Manesar, Noida, and Delhi NCR.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/about",
-  },
   keywords: [
     "About KD Facilities Management Services",
     "Facility Management Company Gurgaon",
+    "Facility Management Company Delhi",
     "Corporate Housekeeping Agency NCR",
     "PASARA Compliance Haryana",
     "KD Cleaning Technologies Arm",
   ],
+  ...socialMetadata("/about", {
+    title: "About KD Facilities Management Services | IFM Company in Gurgaon & Delhi",
+    description:
+      "Institutional-grade housekeeping, PASARA security, and MEP engineering with digital SLA proof. Offices in Gurgaon Sector 31 and Sarita Vihar, New Delhi.",
+  }),
 };
 
 export default function AboutPage() {
@@ -37,6 +41,7 @@ export default function AboutPage() {
 
   return (
     <div className="bg-white">
+      <JsonLd type="Organization" />
       <JsonLd type="BreadcrumbList" breadcrumbs={breadcrumbs} />
       {/* Hero Banner */}
       <section className="bg-navy-950 text-white py-14 sm:py-20 border-b border-navy-800">

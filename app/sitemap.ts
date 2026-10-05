@@ -1,9 +1,10 @@
 import { MetadataRoute } from "next";
 import { citiesData } from "@/content/cities";
 import { insightsArticles } from "@/content/insights";
+import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://kdfmservices.com";
+  const baseUrl = SITE_URL;
   const currentDate = new Date();
 
   // Core public pages
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/services/cleaning", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/services/security", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/services/technical", priority: 0.9, changeFrequency: "weekly" as const },
+    { route: "/services/pest-control", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/services/specialised", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/industries", priority: 0.85, changeFrequency: "weekly" as const },
     { route: "/technology", priority: 0.85, changeFrequency: "weekly" as const },

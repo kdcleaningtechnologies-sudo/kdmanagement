@@ -32,7 +32,7 @@ export const insightsArticles: InsightArticle[] = [
   {
     slug: "complete-guide-integrated-facility-management-delhi-ncr",
     title: "The Complete Guide to Integrated Facility Management (IFM) in Delhi NCR",
-    seoTitle: "Guide to Integrated Facility Management (IFM) in Delhi NCR | KD",
+    seoTitle: "Guide to Integrated Facility Management (IFM) in Delhi NCR",
     seoDescription: "Discover how Integrated Facility Management (IFM) eliminates multi-contractor friction, reduces overhead by 18-25%, and ensures single-SLA accountability across Delhi NCR tech parks.",
     keywords: [
       "integrated facility management company",
@@ -135,7 +135,7 @@ export const insightsArticles: InsightArticle[] = [
   {
     slug: "pasara-security-compliance-checklist-gurgaon",
     title: "PASARA Security Guarding Compliance Checklist for Corporate Offices in Gurgaon & Noida",
-    seoTitle: "PASARA Security Compliance Checklist Gurgaon & NCR | KD",
+    seoTitle: "PASARA Security Compliance Checklist Gurgaon & NCR",
     seoDescription: "A comprehensive checklist for hiring PASARA-certified security guard agencies in Gurugram, Delhi, and Noida. Avoid legal liability and ensure police-verified personnel.",
     keywords: [
       "security services NCR",
@@ -231,7 +231,7 @@ export const insightsArticles: InsightArticle[] = [
   {
     slug: "corporate-housekeeping-restroom-hygiene-benchmarks",
     title: "Corporate Restroom Hygiene Benchmarks & SLA Turnaround Cycles for Grade-A Offices",
-    seoTitle: "Corporate Housekeeping & Restroom Hygiene Benchmarks | KD",
+    seoTitle: "Corporate Housekeeping & Restroom Hygiene Benchmarks",
     seoDescription: "Benchmark your corporate cleaning standards: 30-minute custodial loops, ATP bioluminescence testing, green chemicals, and float crew reserves for Gurgaon and Delhi NCR offices.",
     keywords: [
       "corporate housekeeping services",
@@ -320,7 +320,7 @@ export const insightsArticles: InsightArticle[] = [
   {
     slug: "preventive-mep-maintenance-hvac-substations",
     title: "Preventive MEP Maintenance: Eliminating Chiller & DG Downtime in Commercial Buildings",
-    seoTitle: "Preventive MEP Maintenance for Commercial Buildings | KD",
+    seoTitle: "Preventive MEP Maintenance for Commercial Buildings",
     seoDescription: "Prevent catastrophic chiller failures and DG sync outages. Explore our engineering checklist for HVAC, 11kV substations, plumbing, and energy efficiency in Delhi NCR.",
     keywords: [
       "technical facility services",
@@ -404,7 +404,7 @@ export const insightsArticles: InsightArticle[] = [
   {
     slug: "autonomous-drone-facade-cleaning-vs-traditional-scaffolding",
     title: "Autonomous Drone Façade Cleaning vs. Traditional Scaffolding: Cost, Safety & Speed Analysis",
-    seoTitle: "Drone Façade Cleaning vs Traditional Scaffolding | KD",
+    seoTitle: "Drone Façade Cleaning vs Traditional Scaffolding",
     seoDescription: "Compare autonomous cleaning drones vs rope-access scaffolding for high-rise glass washing in Delhi NCR: 100% fall risk elimination, 70% faster turnaround, and pure-water technology.",
     keywords: [
       "drone facade cleaning India",

@@ -75,7 +75,7 @@ export const industriesData: Industry[] = [
     recommendedServices: [
       { name: "Marble Polishing & Floor Crystallization", href: "/services/specialised#marble-stone-crystallization" },
       { name: "Glass & Façade Cleaning", href: "/services/cleaning#facade-cleaning" },
-      { name: "Integrated Pest Management (IPM)", href: "/services/specialised#integrated-pest-management" },
+      { name: "Integrated Pest Management (IPM)", href: "/services/pest-control" },
       { name: "Kitchen & Restroom Sanitization", href: "/services/cleaning#deep-cleaning" },
     ],
     slaHighlight: "Guaranteed 85+ gloss-meter reflection unit outcome on lobby marble at all times.",

@@ -1,5 +1,6 @@
 import React from "react";
 import { companyInfo } from "@/content/company";
+import { SITE_URL } from "@/lib/seo";
 
 export interface BreadcrumbItem {
   name: string;
@@ -53,15 +54,17 @@ export const JsonLd: React.FC<JsonLdProps> = ({
   let schemaData: Record<string, unknown> = {};
 
   if (type === "LocalBusiness" || type === "Organization") {
-    schemaData = {
-      "@context": "https://schema.org",
+    const isDelhi = Boolean(city && /delhi/i.test(city));
+    const primaryAddress = isDelhi ? companyInfo.delhiAddress : companyInfo.address;
+    const orgId = `${SITE_URL}/#organization`;
+    const professionalService: Record<string, unknown> = {
       "@type": type === "LocalBusiness" ? "ProfessionalService" : "Organization",
-      "@id": "https://www.kdfmservices.com/#organization",
+      "@id": orgId,
       "name": city ? `${companyInfo.name} - ${city}` : companyInfo.name,
       "legalName": companyInfo.legalName,
-      "url": "https://www.kdfmservices.com",
-      "logo": "https://www.kdfmservices.com/images/kd-logo.png",
-      "image": "https://www.kdfmservices.com/images/hero-placeholder.jpg",
+      "url": SITE_URL,
+      "logo": `${SITE_URL}/images/kd-logo.png`,
+      "image": `${SITE_URL}/images/kd-hero-staff.png`,
       "description": companyInfo.heroSubheadline,
       "telephone": companyInfo.phone,
       "email": companyInfo.email,
@@ -86,10 +89,10 @@ export const JsonLd: React.FC<JsonLdProps> = ({
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": companyInfo.address.street,
-        "addressLocality": city || companyInfo.address.city,
-        "addressRegion": companyInfo.address.state,
-        "postalCode": companyInfo.address.pincode,
+        "streetAddress": primaryAddress.street,
+        "addressLocality": city || primaryAddress.city,
+        "addressRegion": "state" in primaryAddress ? primaryAddress.state : companyInfo.address.state,
+        "postalCode": primaryAddress.pincode,
         "addressCountry": "IN",
       },
       "location": [
@@ -104,6 +107,12 @@ export const JsonLd: React.FC<JsonLdProps> = ({
             "postalCode": companyInfo.address.pincode,
             "addressCountry": "IN",
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "28.4595",
+            "longitude": "77.0266",
+          },
+          "hasMap": "https://maps.google.com/?q=521+Sector+31+Gurgaon+122001",
         },
         {
           "@type": "Place",
@@ -116,6 +125,12 @@ export const JsonLd: React.FC<JsonLdProps> = ({
             "postalCode": companyInfo.delhiAddress.pincode,
             "addressCountry": "IN",
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "28.5324",
+            "longitude": "77.2936",
+          },
+          "hasMap": "https://maps.google.com/?q=C-134+Sarita+Vihar+New+Delhi+110076",
         },
         {
           "@type": "Place",
@@ -129,11 +144,17 @@ export const JsonLd: React.FC<JsonLdProps> = ({
           },
         },
       ],
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "28.4595",
-        "longitude": "77.0266",
-      },
+      "geo": isDelhi
+        ? {
+            "@type": "GeoCoordinates",
+            "latitude": "28.5324",
+            "longitude": "77.2936",
+          }
+        : {
+            "@type": "GeoCoordinates",
+            "latitude": "28.4595",
+            "longitude": "77.0266",
+          },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -154,6 +175,8 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         { "@type": "City", "name": "Gurugram" },
         { "@type": "City", "name": "Gurgaon" },
         { "@type": "City", "name": "Delhi" },
+        { "@type": "City", "name": "New Delhi" },
+        { "@type": "Place", "name": "Sarita Vihar" },
         { "@type": "City", "name": "Noida" },
         { "@type": "City", "name": "Greater Noida" },
         { "@type": "City", "name": "Faridabad" },
@@ -165,6 +188,15 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         companyInfo.social.linkedin,
         companyInfo.social.facebook,
         companyInfo.social.instagram,
+      ],
+      "knowsAbout": [
+        "Integrated Facility Management",
+        "Corporate Housekeeping",
+        "PASARA Security Guarding",
+        "MEP and HVAC Maintenance",
+        "Drone Facade Cleaning",
+        "Integrated Pest Management",
+        "Commercial Pest Control",
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -198,6 +230,14 @@ export const JsonLd: React.FC<JsonLdProps> = ({
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "name": "Commercial Pest Control & IPM",
+              "description": "Scheduled integrated pest management, rodent and termite control, fumigation, and disinfection for corporate, hospital, and industrial sites.",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
               "name": "Autonomous Drone Façade Cleaning & Robotics",
               "description": "High-pressure pure-water drone façade cleaning up to 120m height.",
             },
@@ -205,6 +245,29 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         ],
       },
     };
+
+    if (!city) {
+      schemaData = {
+        "@context": "https://schema.org",
+        "@graph": [
+          professionalService,
+          {
+            "@type": "WebSite",
+            "@id": `${SITE_URL}/#website`,
+            "url": SITE_URL,
+            "name": companyInfo.name,
+            "description": companyInfo.heroSubheadline,
+            "publisher": { "@id": orgId },
+            "inLanguage": "en-IN",
+          },
+        ],
+      };
+    } else {
+      schemaData = {
+        "@context": "https://schema.org",
+        ...professionalService,
+      };
+    }
   } else if (type === "Service" && service) {
     schemaData = {
       "@context": "https://schema.org",
@@ -218,7 +281,7 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         "name": companyInfo.name,
         "telephone": companyInfo.phone,
         "email": companyInfo.email,
-        "url": "https://www.kdfmservices.com",
+        "url": SITE_URL,
       },
       "areaServed": [
         "Gurugram",
@@ -236,7 +299,7 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         "@type": "ListItem",
         "position": index + 1,
         "name": b.name,
-        "item": b.url.startsWith("http") ? b.url : `https://www.kdfmservices.com${b.url}`,
+        "item": b.url.startsWith("http") ? b.url : `${SITE_URL}${b.url}`,
       })),
     };
   } else if (type === "FAQPage" && faqs && faqs.length > 0) {
@@ -270,14 +333,14 @@ export const JsonLd: React.FC<JsonLdProps> = ({
         "name": companyInfo.name,
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.kdfmservices.com/images/kd-logo.png",
+          "url": `${SITE_URL}/images/kd-logo.png`,
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": article.url,
       },
-      "image": article.image || "https://www.kdfmservices.com/images/hero-placeholder.jpg",
+      "image": article.image || `${SITE_URL}/images/kd-hero-staff.png`,
     };
   }
 

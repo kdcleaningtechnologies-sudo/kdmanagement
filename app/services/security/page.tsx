@@ -6,16 +6,14 @@ import { servicesData } from "@/content/services";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, socialMetadata } from "@/lib/seo";
 
 const securityCategory = servicesData.find((s) => s.id === "security-services")!;
 
 export const metadata: Metadata = {
-  title: "Security & Guarding Services in Gurgaon & NCR | KD Facilities Management Services",
+  title: "Security & Guarding Services in Gurgaon & NCR",
   description:
     "PASARA-compliant manned security guarding, visitor gate control, electronic RFID night patrols, and emergency response teams across Gurgaon and Delhi NCR.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/services/security",
-  },
   keywords: [
     "Security Services Gurgaon",
     "Security Guard Agency Gurgaon",
@@ -25,13 +23,10 @@ export const metadata: Metadata = {
     "PASARA Compliant Security Agency",
     "Industrial Security Services Manesar",
   ],
-  openGraph: {
+  ...socialMetadata("/services/security", {
     title: "Security & Guarding Services in Gurgaon & NCR | KD Facilities Management Services",
     description: "PASARA-certified 24/7 manned security guards, RFID night patrolling, and digital gate management.",
-    url: "https://www.kdfmservices.com/services/security",
-    type: "website",
-    locale: "en_IN",
-  },
+  }),
 };
 
 const securityFaqs = [
@@ -64,7 +59,7 @@ export default function SecurityServicesPage() {
     name: "24/7 PASARA Manned Security & Guarding",
     serviceType: "Private Security Agency & Manned Guarding",
     description: securityCategory.description,
-    url: "https://www.kdfmservices.com/services/security",
+    url: `${SITE_URL}/services/security`,
   };
 
   return (

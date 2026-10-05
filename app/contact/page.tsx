@@ -14,21 +14,25 @@ import { companyInfo } from "@/content/company";
 import { citiesData } from "@/content/cities";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact Us & Free Facility Assessment | KD Facilities Management Services Gurgaon",
+  title: "Contact Us & Free Facility Assessment",
   description:
-    "Request a free site assessment for your facility in Gurgaon or Delhi NCR. Contact our 24/7 operations desk, WhatsApp team, or visit our Sector 31 headquarters.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/contact",
-  },
+    "Request a free facility assessment in Gurgaon or Delhi NCR. Visit HQ at 521, Sector 31, Gurgaon or Delhi office at C-134, Sarita Vihar, New Delhi 110076. Call +91 8796682266 or Marketing Head Vinod Singh at +91 8800883467.",
   keywords: [
     "Contact KD Facilities Management Services",
     "Facility Management Gurgaon Office",
+    "Facility Management Delhi Office Sarita Vihar",
     "Request Facility Audit Gurugram",
     "Commercial Cleaning Quote Delhi NCR",
     "Integrated Facility Management Contact",
   ],
+  ...socialMetadata("/contact", {
+    title: "Contact KD Facilities Management Services | Gurgaon & Delhi Offices",
+    description:
+      "Free on-site facility assessment. Gurgaon HQ: 521, Sector 31. Delhi office: C-134, Sarita Vihar, New Delhi 110076.",
+  }),
 };
 
 export default function ContactPage() {

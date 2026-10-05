@@ -9,6 +9,18 @@ export function middleware(req: NextRequest) {
     hostname.startsWith("admin.") ||
     hostname.includes("admin.localhost");
 
+  // Collapse www to the apex canonical host in production (matches sitemap & metadata).
+  if (
+    process.env.NODE_ENV === "production" &&
+    hostname.startsWith("www.") &&
+    !isAdminSubdomain
+  ) {
+    const dest = new URL(req.url);
+    dest.hostname = hostname.replace(/^www\./, "");
+    dest.protocol = "https:";
+    return NextResponse.redirect(dest, 308);
+  }
+
   if (isAdminSubdomain) {
     const pathname = url.pathname;
 

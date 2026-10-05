@@ -114,6 +114,11 @@ export const Footer: React.FC = () => {
                   Maintenance
                 </Link>
               </li>
+              <li>
+                <Link href="/services/pest-control" className="text-slate-400 hover:text-brandcyan-300 transition-colors block">
+                  Pest Control
+                </Link>
+              </li>
             </ul>
           </div>
 

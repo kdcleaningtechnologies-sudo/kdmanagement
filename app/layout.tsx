@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { companyInfo } from "@/content/company";
+import { SITE_URL, defaultOgImage } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,60 +21,70 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kdfmservices.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Facility Management Company in Gurgaon | KD Facilities Management Services",
+    default: "Facility Management Company in Gurgaon & Delhi NCR | KD Facilities Management Services",
     template: "%s | KD Facilities Management Services",
   },
   description:
-    "Leading Integrated Facility Management (IFM) company in Gurgaon, Delhi, Noida, Greater Noida, Faridabad, and IMT Manesar. Commercial housekeeping, 24/7 PASARA security, HVAC/MEP technical maintenance, and autonomous drone façade cleaning.",
+    "Integrated Facility Management (IFM) company in Gurgaon and Delhi NCR. Corporate housekeeping, 24/7 PASARA security, HVAC/MEP maintenance, and drone façade cleaning across Gurugram, New Delhi, Noida, Faridabad, and Manesar.",
   alternates: {
-    canonical: "https://kdfmservices.com",
+    canonical: SITE_URL,
+    languages: {
+      "en-IN": SITE_URL,
+    },
   },
   keywords: [
     "Facility Management Company in Gurgaon",
     "Facility Management Services in Gurugram",
+    "Facility Management Company Delhi NCR",
+    "Facility Management Company New Delhi",
     "Integrated Facility Management Company",
     "Housekeeping Services Gurugram",
+    "Housekeeping Services Sarita Vihar",
     "Security Services NCR",
-    "Facility Management Company Delhi NCR",
     "Corporate Housekeeping Services",
     "Technical Facility Services",
     "Corporate Cleaning Services Gurgaon",
     "Hospital Housekeeping Services Gurgaon",
     "Industrial Cleaning Services Gurgaon",
-    "Commercial Cleaning Company Gurgaon",
     "PASARA Security Guard Agency Gurgaon",
   ],
   authors: [{ name: companyInfo.name }],
   creator: companyInfo.name,
   publisher: companyInfo.legalName,
+  category: "Facility Management",
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://kdfmservices.com",
+    url: SITE_URL,
     siteName: companyInfo.name,
-    title: "KD Facilities Management Services — Integrated Facility Management & Smarter Operations",
+    title: "KD Facilities Management Services — Integrated Facility Management in Gurgaon & Delhi NCR",
     description:
-      "Single-point IFM partner in Delhi NCR for corporate offices, hospitals, industrial plants, and commercial campuses. Flexible AMCs with zero lock-in.",
-    images: [
-      {
-        url: "/images/kd-hero-staff.png",
-        width: 1200,
-        height: 630,
-        alt: "KD Facilities Management Services Corporate Facility Management",
-      },
-    ],
+      "Single-point IFM partner for corporate offices, hospitals, industrial plants, and campuses. Offices in Sector 31 Gurgaon and C-134 Sarita Vihar, New Delhi.",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "KD Facilities Management Services — Integrated Facility Management",
-    description: "Smarter operations, verified workforce, 24/7 security, and mechanized facility management across Delhi NCR.",
-    images: ["/images/kd-hero-staff.png"],
+    description: "Housekeeping, PASARA security, MEP maintenance, and drone façade cleaning across Gurgaon and Delhi NCR.",
+    images: [defaultOgImage.url],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: [
@@ -97,7 +108,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en-IN" className="scroll-smooth">
       <body
         className={`${inter.variable} ${outfit.variable} font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col`}
       >

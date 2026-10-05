@@ -28,7 +28,7 @@ export const citiesData: Record<string, CityData> = {
     state: "Haryana",
     headline: "Premier Facility Management Services in Gurgaon & Cyber City",
     tagline: "High-performance corporate housekeeping, hard MEP engineering, and PASARA security for Grade-A tech parks, GCCs, and luxury high-rises across Gurugram.",
-    seoTitle: "Facility Management Company in Gurgaon | KD Facilities Management Services",
+    seoTitle: "Facility Management Company in Gurgaon | Cyber City & Golf Course Road",
     seoDescription: "Leading Integrated Facility Management company in Gurgaon. Corporate housekeeping, 24/7 PASARA security, HVAC/MEP maintenance, and facade cleaning in DLF Cyber City & Golf Course Rd.",
     primaryKeyword: "Facility Management Company in Gurgaon",
     secondaryKeywords: [
@@ -76,8 +76,8 @@ export const citiesData: Record<string, CityData> = {
     state: "Delhi",
     headline: "Enterprise Facility Management & Cleaning Services in Delhi NCR",
     tagline: "Corporate housekeeping, government empanelment compliance, and technical facility operations for Delhi's premier commercial districts.",
-    seoTitle: "Integrated Facility Management in Delhi | KD Facilities Management Services",
-    seoDescription: "Trusted facility management company in Delhi. Professional corporate cleaning, hospital housekeeping, and 24/7 technical MEP maintenance across Connaught Place, Aerocity & Okhla.",
+    seoTitle: "Integrated Facility Management in Delhi | Sarita Vihar Office",
+    seoDescription: "Facility management company in Delhi with an office at C-134, Sarita Vihar, New Delhi 110076. Corporate cleaning, hospital housekeeping, PASARA security, and MEP maintenance across NCR.",
     primaryKeyword: "Integrated Facility Management Delhi",
     secondaryKeywords: [
       "Corporate Cleaning Services Delhi",
@@ -85,6 +85,7 @@ export const citiesData: Record<string, CityData> = {
       "Commercial Cleaning Company Delhi",
       "Security Guarding Services Delhi",
       "Housekeeping Services Aerocity Delhi",
+      "Facility Management Sarita Vihar",
     ],
     keyHubs: [
       "Connaught Place & Barakhamba Road",
@@ -96,6 +97,7 @@ export const citiesData: Record<string, CityData> = {
     ],
     clientTypes: ["Corporate Headquarters", "Embassies & Consulates", "Private Hospitals & Clinics", "Retail Malls & Luxury Showrooms"],
     localOffice: "Delhi Office: C-134, Sarita Vihar, New Delhi — 110076",
+    dispatchTime: "Under 40 minutes across Central & South Delhi",
     dispatchTime: "Under 40 minutes across Central & South Delhi",
     localContext: "Delhi's commercial footprint ranges from heritage institutional centers in Connaught Place to high-footfall hospitality hubs in Aerocity and dense business parks in Okhla. Managing facilities in Delhi requires specialized protocols for strict green cleaning compliance, dust suppression, and high-security access verification tailored for consulates, healthcare institutions, and corporate headquarters.",
     faqs: [
@@ -119,7 +121,7 @@ export const citiesData: Record<string, CityData> = {
     state: "Uttar Pradesh",
     headline: "Grade-A Facility Management for Noida Expressway & IT Parks",
     tagline: "Mechanized industrial cleaning, IT park housekeeping, and substation electrical maintenance across Gautam Buddha Nagar.",
-    seoTitle: "Facility Management Services in Noida | KD Facilities Management Services",
+    seoTitle: "Facility Management Services in Noida & Greater Noida",
     seoDescription: "Comprehensive facility management services in Noida & Greater Noida. Corporate housekeeping, industrial cleaning, and round-the-clock security guarding in Sector 62 & Expressway.",
     primaryKeyword: "Facility Management Services in Noida",
     secondaryKeywords: [
@@ -161,7 +163,7 @@ export const citiesData: Record<string, CityData> = {
     state: "Haryana",
     headline: "Industrial Facility Management & Heavy-Duty Cleaning in Faridabad",
     tagline: "Specialized factory floor scrubbers, engineering MEP upkeep, and 24/7 industrial perimeter security for Faridabad's manufacturing hub.",
-    seoTitle: "Industrial Cleaning & Facility Management Faridabad | KD Facilities Management Services",
+    seoTitle: "Industrial Cleaning & Facility Management in Faridabad",
     seoDescription: "Industrial cleaning, technical maintenance, and facility management services in Faridabad. Heavy engineering plants, warehouses, and commercial spaces on Mathura Road.",
     primaryKeyword: "Industrial Cleaning Services Faridabad",
     secondaryKeywords: [
@@ -203,7 +205,7 @@ export const citiesData: Record<string, CityData> = {
     state: "Haryana",
     headline: "Manufacturing & Industrial Facility Management in IMT Manesar",
     tagline: "Heavy-duty ride-on scrubbing, factory safety compliance, licensed electrical HT/LT substations, and industrial gate security.",
-    seoTitle: "Facility Management in IMT Manesar | KD Facilities Management Services",
+    seoTitle: "Industrial Facility Management in IMT Manesar",
     seoDescription: "Industrial facility management company in IMT Manesar. Plant housekeeping, PASARA security, STP/WTP management, and DG set operations across Phases 1 to 5.",
     primaryKeyword: "Industrial Cleaning Services Manesar",
     secondaryKeywords: [

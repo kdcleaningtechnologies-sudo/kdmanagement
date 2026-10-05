@@ -18,14 +18,12 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { BrandLogo } from "@/components/BrandLogo";
 import { JsonLd } from "@/components/JsonLd";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Facility Technology & Robotics | KD Facilities Management Services",
+  title: "Facility Technology & Robotics",
   description:
     "Explore KD Cleaning Technologies: autonomous drone façade washing, water-fed pure water systems, QR inspection loops, and biometric attendance across Gurugram, Delhi, and Noida.",
-  alternates: {
-    canonical: "https://www.kdfmservices.com/technology",
-  },
   keywords: [
     "Drone Facade Cleaning India",
     "Water-Fed Pole Cleaning Gurgaon",
@@ -33,6 +31,11 @@ export const metadata: Metadata = {
     "KD Cleaning Technologies",
     "Digital Facility Management Gurgaon",
   ],
+  ...socialMetadata("/technology", {
+    title: "Facility Technology & Robotics | KD Facilities Management Services",
+    description:
+      "Explore KD Cleaning Technologies: autonomous drone façade washing, water-fed pure water systems, QR inspection loops, and biometric attendance across Gurugram, Delhi, and Noida.",
+  }),
 };
 
 const getTechIcon = (iconName: string) => {
